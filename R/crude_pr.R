@@ -7,9 +7,13 @@
 #' @param dataset_condition_pop A dataframe containing 1 row per patient of the population with a given condition
 #' @param demographic This the grouping variable over which the rates with be calculated
 #' @return a ggplot object
+#' @importFrom dplyr left_join group_by summarise mutate arrange n
 #' @examples
+#' \dontrun{
 #' library(tidyverse)
 #' crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
+#' }
+
 #' @export
 crude_pr <- function(dataset_base_pop,dataset_condition_pop,demographic){
   denominator <- {{dataset_base_pop}}  %>%

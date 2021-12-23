@@ -28,6 +28,8 @@ This function utilises the Tidyverse framework of Non-Standard Evaluation.
 As such arguments are passed to the function without quotation.
 }
 \examples{
+\dontrun{
 library(tidyverse)
 crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
+}
 }

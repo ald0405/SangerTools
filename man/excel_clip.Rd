@@ -3,7 +3,7 @@
 \name{excel_clip}
 \alias{excel_clip}
 \title{Dataframe to Clipboard
-This function copies a dataframe to your clipboard}
+This function copies a dataframe to your clipboard.}
 \usage{
 excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
 }
@@ -17,12 +17,13 @@ excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
 \item{...}{function forwarding}
 }
 \value{
-
+a data frame copied to your clipboard
 }
 \description{
 Dataframe to Clipboard
-This function copies a dataframe to your clipboard
+This function copies a dataframe to your clipboard.
 }
 \examples{
-excel_clip(dataframe)
+\dontrun{
+excel_clip(dataframe)}
 }

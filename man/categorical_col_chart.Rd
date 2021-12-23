@@ -3,8 +3,7 @@
 \name{categorical_col_chart}
 \alias{categorical_col_chart}
 \title{Plot Counts of Categorical Variables
-Create a ggplot2 column chart of categorical variables with
-proportions, in ascending order}
+Create a ggplot2 column chart of categorical variables with proportions, in ascending order.}
 \usage{
 categorical_col_chart(df, grouping_var)
 }
@@ -18,13 +17,14 @@ a ggplot2 object
 }
 \description{
 Plot Counts of Categorical Variables
-Create a ggplot2 column chart of categorical variables with
-proportions, in ascending order
+Create a ggplot2 column chart of categorical variables with proportions, in ascending order.
 }
 \examples{
+\dontrun{
 library(ggplot2)
 library(scales)
 library(magrittr)
 library(ggthemes)
 categorical_col_chart(gapminder,Continent)
+}
 }
