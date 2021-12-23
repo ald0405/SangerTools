@@ -1,9 +1,9 @@
 #' Dataframe to Clipboard
 #' This function copies a dataframe to your clipboard.
 #' @importFrom utils write.table
-#' @param x Dataframe
-#' @param row.names Set to FALSE
-#' @param col.names Set to TRUE
+#' @param df Dataframe
+#' @param row_names Set to FALSE
+#' @param col_names Set to TRUE
 #' @param ... function forwarding
 #' @return a data frame copied to your clipboard
 #' @examples
@@ -11,20 +11,21 @@
 #' excel_clip(dataframe)}
 #' @export
 
-excel_clip <- function(x,
-                       row.names = FALSE,
-                       col.names = TRUE,
+excel_clip <- function(df,
+                       row_names = FALSE,
+                       col_names = TRUE,
                        ...) {
   write.table(
-    x,
+    df,
     "clipboard",
     sep = "\t",
-    row.names = row.names,
-    col.names = col.names,
+    row_names = row.names,
+    col_names = col.names,
     ...
   )
 
   message("Your Item is Now Copied to Clipboard")
 
 }
+
 

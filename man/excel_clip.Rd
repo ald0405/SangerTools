@@ -5,14 +5,14 @@
 \title{Dataframe to Clipboard
 This function copies a dataframe to your clipboard.}
 \usage{
-excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
+excel_clip(df, row_names = FALSE, col_names = TRUE, ...)
 }
 \arguments{
-\item{x}{Dataframe}
+\item{df}{Dataframe}
 
-\item{row.names}{Set to FALSE}
+\item{row_names}{Set to FALSE}
 
-\item{col.names}{Set to TRUE}
+\item{col_names}{Set to TRUE}
 
 \item{...}{function forwarding}
 }
