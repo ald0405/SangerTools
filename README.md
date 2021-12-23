@@ -30,10 +30,6 @@ library(SangerTools)
 ```
 ## Installing the package from CRAN
 
-To install from CRAN, use the below command:
-``` r
-install.packages("ConfusionTableR")
-
 Still a work in progress......
 
 
