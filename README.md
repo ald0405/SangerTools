@@ -1,9 +1,7 @@
 # SangerTools
 Useful R tools
-<font color="red">This is some text!</font>
 
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=ald0405)](https://github.com/anuraghazra/github-readme-stats)
 
 :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :syringe: :syringe: :syringe:
 
@@ -20,5 +18,23 @@ Aids those working with
 * Population Health Management
 * Patient Cohorting 
 
+## Installing the package from GitHub
 
-Still a work in progress
+Here, I will use the package remotes to install the package:
+
+``` r
+# install.packages("remotes") # if not already installed
+remotes::install_github("https://github.com/ald0405/SangerTools")
+library(SangerTools)
+
+```
+## Installing the package from CRAN
+
+To install from CRAN, use the below command:
+``` r
+install.packages("ConfusionTableR")
+
+Still a work in progress......
+
+
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=ald0405)](https://github.com/anuraghazra/github-readme-stats)
