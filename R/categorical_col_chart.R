@@ -41,7 +41,7 @@ categorical_col_chart <- function(df, grouping_var){
 
     scale_fill_economist()+
 
-    scale_y_continuous(labels = scales::comma)
+    scale_y_continuous(labels = comma)
 
   return(p1)
 
