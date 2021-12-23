@@ -2,7 +2,9 @@
 % Please edit documentation in R/categorical_col_chart.R
 \name{categorical_col_chart}
 \alias{categorical_col_chart}
-\title{Plot Counts of Categorical Variables}
+\title{Plot Counts of Categorical Variables
+Create a ggplot2 column chart of categorical variables with
+proportions, in ascending order}
 \usage{
 categorical_col_chart(df, grouping_var)
 }
@@ -12,12 +14,17 @@ categorical_col_chart(df, grouping_var)
 \item{grouping_var}{a categorical variable by which to group the count by}
 }
 \value{
-
+a ggplot2 object
 }
 \description{
+Plot Counts of Categorical Variables
 Create a ggplot2 column chart of categorical variables with
-             proportions, in ascending order
+proportions, in ascending order
 }
 \examples{
-        categorical_col_chart(gapminder,Continent)
+library(ggplot2)
+library(scales)
+library(magrittr)
+library(ggthemes)
+categorical_col_chart(gapminder,Continent)
 }

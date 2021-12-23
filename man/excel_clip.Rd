@@ -2,7 +2,8 @@
 % Please edit documentation in R/excel_clip.R
 \name{excel_clip}
 \alias{excel_clip}
-\title{Dataframe to Clipboard}
+\title{Dataframe to Clipboard
+This function copies a dataframe to your clipboard}
 \usage{
 excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
 }
@@ -13,12 +14,13 @@ excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
 
 \item{col.names}{Set to TRUE}
 
-\item{...}{}
+\item{...}{function forwarding}
 }
 \value{
 
 }
 \description{
+Dataframe to Clipboard
 This function copies a dataframe to your clipboard
 }
 \examples{

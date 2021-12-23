@@ -2,7 +2,8 @@
 % Please edit documentation in R/multiple_csv_reader.R
 \name{multiple_csv_reader}
 \alias{multiple_csv_reader}
-\title{Read Multiple CSV files into R}
+\title{Read Multiple CSV files into R
+This function reads multiple CSVs in a directory must be same structure}
 \usage{
 multiple_csv_reader(file_path, rows_to_skip = 0, col_names = TRUE)
 }
@@ -17,8 +18,8 @@ multiple_csv_reader(file_path, rows_to_skip = 0, col_names = TRUE)
 
 }
 \description{
-This function reads multiple CSVs in a directory;
-             must be same structure
+Read Multiple CSV files into R
+This function reads multiple CSVs in a directory must be same structure
 }
 \examples{
 combined_csv_files <- multiple_csv_reader("Inputs/",1,TRUE)
