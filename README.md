@@ -6,4 +6,10 @@ This package as aimed at novice and intermediate R users as they work with patie
 NHS Gloucestershire CCG
 
 
+Aids those working with 
+* Patient Level Data
+* Population Health Management
+* Patient Cohorting 
+
+
 Still a work in progress
