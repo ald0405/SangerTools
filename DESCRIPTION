@@ -2,11 +2,10 @@ Package: SangerTools
 Type: Package
 Title: A package with tools to improve analytical staff efficiency
 Version: 0.1.0
-Authors: c(
-          person("Asif", "Laldin", "laldin.asif@gmail.com", 
-          c("aut", "cre")),
-          person("Gary", "Hutson","hutsons-hacks@outlook.com", c("aut"), 
-          comment = c(ORCID="0000-0003-3534-6143")))
+Authors@R: c(
+          person("Asif", "Laldin", , "laldin.asif@gmail.com", c("aut", "cre")),
+          person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
+          )
 Maintainer: Asif Laldin <laldin.asif@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
@@ -15,8 +14,14 @@ Encoding: UTF-8
 LazyData: false
 RoxygenNote: 7.1.2
 Imports: 
-          rmarkdown,
-          testthat(>= 3.0.0)
+    dplyr, 
+    ggplot2, 
+    scales,
+    janitor,
+    readr,
+    utils, 
+    ggthemes, 
+    magrittr
 Suggests: 
     knitr,
     rmarkdown,

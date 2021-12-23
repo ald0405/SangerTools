@@ -2,32 +2,34 @@
 % Please edit documentation in R/crude_pr.R
 \name{crude_pr}
 \alias{crude_pr}
-\title{Crude Prevalence Rate}
+\title{Crude Prevalence Rate
+Calculate a group's Crude Prevalence Rate (Rate Per 1,000).
+This is created to work with datasets that have 1 row per individual and Columns as variables.
+This function utilises the Tidyverse framework of Non-Standard Evaluation.
+As such arguments are passed to the function without quotation.}
 \usage{
 crude_pr(dataset_base_pop, dataset_condition_pop, demographic)
 }
 \arguments{
 \item{dataset_base_pop}{A dataframe containing 1 row per patient of an entire population}
 
-\item{dataset_condition_pop}{A dataframe containing 1 row per patient of the
-population with a given condition
-If your dataframe has both the entire population
-and those with a condition, consider creating
-dataset_condition_pop by
-`dataset_condition_pop <- dataset_base_pop %>% filter(Condition == "Yes")`}
+\item{dataset_condition_pop}{A dataframe containing 1 row per patient of the population with a given condition}
 
 \item{demographic}{This the grouping variable over which the rates with be calculated}
 }
 \value{
-
+a ggplot object
 }
 \description{
+Crude Prevalence Rate
 Calculate a group's Crude Prevalence Rate (Rate Per 1,000).
- This is created to work with datasets that have 1 row per individual
-             and Columns as variables.
-             This function utilises the Tidyverse framework of Non-Standard Evaluation.
-             As such arguments are passed to the function without quotation.
+This is created to work with datasets that have 1 row per individual and Columns as variables.
+This function utilises the Tidyverse framework of Non-Standard Evaluation.
+As such arguments are passed to the function without quotation.
 }
 \examples{
-         crudepr(dataset_base_pop,dataset_condition_pop,Ethnicity)
+\dontrun{
+library(tidyverse)
+crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
+}
 }

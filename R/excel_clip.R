@@ -1,16 +1,16 @@
 #' Dataframe to Clipboard
-#' @description This function copies a dataframe to your clipboard
+#' This function copies a dataframe to your clipboard.
 #' @importFrom utils write.table
 #' @param x Dataframe
 #' @param row.names Set to FALSE
 #' @param col.names Set to TRUE
-#' @param ...
-#'
-#' @return
-#' @export
-#'
+#' @param ... function forwarding
+#' @return a data frame copied to your clipboard
 #' @examples
-#' excel_clip(dataframe)
+#' \dontrun{
+#' excel_clip(dataframe)}
+#' @export
+
 excel_clip <- function(x,
                        row.names = FALSE,
                        col.names = TRUE,
