@@ -10,6 +10,7 @@
 #' @importFrom dplyr left_join
 #' @importFrom dplyr desc
 #' @importFrom dplyr arrange
+#' @importFrom magrittr %>%
 #' @param dataset_base_pop A dataframe containing 1 row per patient of an entire population
 #' @param dataset_condition_pop A dataframe containing 1 row per patient of the
 #'                              population with a given condition

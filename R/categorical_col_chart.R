@@ -11,6 +11,7 @@
 #' @importFrom ggplot2 scale_y_continuous
 #' @importFrom scales comma
 #' @importFrom ggthemes scale_fill_economist
+#' @importFrom magrittr %>%
 #' @param df A dataframe with categorical variables
 #' @param grouping_var a categorical variable by which to group the count by
 #'
