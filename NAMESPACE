@@ -2,4 +2,7 @@
 
 export(excel_clip)
 export(hello)
+export(multiple_csv_reader)
+importFrom(janitor,clean_names)
+importFrom(readr,read_csv)
 importFrom(utils,write.table)

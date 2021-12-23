@@ -1,6 +1,6 @@
 Package: SangerTools
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A package with tools to improve analytical staff efficiency
 Version: 0.1.0
 Authors: c(
           person("Asif", "Laldin", "laldin.asif@gmail.com", 

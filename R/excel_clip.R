@@ -1,4 +1,3 @@
-
 #' Dataframe to Clipboard
 #' @description This function copies a dataframe to your clipboard
 #' @importFrom utils write.table
