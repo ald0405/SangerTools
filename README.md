@@ -1,9 +1,9 @@
 # SangerTools
 
 
-[![Asif](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/asiflaldin/)
+[![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/)
 
-[![Gary](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/ghutson/)
+[![Gary](https://i.stack.imgur.com/gVE0j.png) Gary](https://www.linkedin.com/in/ghutson/)
 
 Useful R tools
 
