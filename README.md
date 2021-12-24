@@ -1,4 +1,10 @@
 # SangerTools
+
+
+[![Asif](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/asiflaldin/)
+
+[![Gary](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/ghutson/)
+
 Useful R tools
 
 
@@ -6,6 +12,7 @@ Useful R tools
 :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :syringe: :syringe: :syringe:
 
 # <p style="color:blue"> Target Audience </p>  
+
 This package as aimed at novice and intermediate R users as they work with patient level data. 
 # Overall Framework 
 The functions and included examples are created to mimic data found at 
