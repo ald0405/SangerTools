@@ -21,8 +21,9 @@ Create a ggplot2 column chart of categorical variables with proportions, in asce
 }
 \examples{
 library(SangerTools)
-library(gapminder)
-# Generate a plot using the gap minder dataset
-plot <- categorical_col_chart(gapminder,continent)
-print(plot)
+# Group by Age Band
+health_data <- SangerTools::PopHealthData
+health_data \%>\%
+ dplyr::filter(Smoker==1) \%>\%
+ SangerTools::categorical_col_chart(AgeBand) + labs(x="Ethnicity", y="Patient Number")
 }

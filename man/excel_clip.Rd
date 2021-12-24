@@ -24,13 +24,11 @@ Dataframe to Clipboard
 This function copies a data frame to your clipboard.
 }
 \examples{
-\dontrun{
-
 library(SangerTools)
-library(dplyr)
-df <- gapminder
-# Copies items to the clipboard for a dataframe
-df \%>\%
+# Group by Age Band
+health_data <- SangerTools::PopHealthData
+health_data \%>\%
  slice(1:10) \%>\%
- excel_clip()}
+ SangerTools::excel_clip(row.names = FALSE, col.names = TRUE)
+ # Message: Your Item is Now Copied to Clipboard
 }

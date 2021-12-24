@@ -9,8 +9,10 @@
 #' @examples
 #' \dontrun{
 #' library(SangerTools)
-#' #Allows for the loading of multiple CSVs from a specified folder
-#' combined_csv_files <- multiple_csv_reader("Inputs/",1,TRUE)}
+#' file_path = 'my_file_path_where_csvs_are_stored'
+#'if (length(SangerTools::multiple_csv_reader(file_path))==0){
+#'  message("This won't work without changing the variable input to a local file path with CSVs in")
+#'}
 #' @export
 
 multiple_csv_reader <- function(file_path, rows_to_skip = 0,

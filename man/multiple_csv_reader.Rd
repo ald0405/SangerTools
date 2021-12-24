@@ -21,9 +21,3 @@ a data frame object full of file paths
 Read Multiple CSV files into R
 This function reads multiple CSVs in a directory must be same structure.
 }
-\examples{
-\dontrun{
-library(SangerTools)
-#Allows for the loading of multiple CSVs from a specified folder
-combined_csv_files <- multiple_csv_reader("Inputs/",1,TRUE)}
-}
