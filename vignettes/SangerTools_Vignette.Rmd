@@ -25,6 +25,7 @@ knitr::opts_chunk$set(
 library(SangerTools)
 library(dplyr)
 library(ggplot2)
+library(scales)
 ```
 
 
@@ -123,6 +124,24 @@ if (length(SangerTools::multiple_csv_reader(file_path))==0){
 ```
 
 This will need to link to a series of CSV files. 
+
+
+
+## See Brand Colours 
+
+This is an anonymous function and can be called without any arguments
+```{r show_brand_palette} 
+
+show_brand_palette()
+```
+
+## See More Colours
+
+This is also an anonymous function; it will show an extended colour palette 
+```{r}
+show_extended_palette()
+```
+
 
 
 ## Closing 
