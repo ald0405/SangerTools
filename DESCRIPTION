@@ -1,21 +1,22 @@
 Package: SangerTools
 Type: Package
-Title: A package with tools to improve analytical staff efficiency
+Title: A Package with Tools to Improve Analytical Staff Efficiency
 Version: 0.1.0
 Authors@R: c(
           person("Asif", "Laldin", , "laldin.asif@gmail.com", c("aut", "cre")),
           person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
           )
 Maintainer: Asif Laldin <laldin.asif@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This has functionality for population health analytics and monitoring.
+    Allowing for visuals and data frames to be developed quickly.
+    This ease means that the package can used by a number of NHS bodies and health service providers.
 License: AGPL (>= 3)
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 RoxygenNote: 7.1.2
 Imports: 
-    dplyr, 
     ggplot2, 
+    dplyr, 
     scales,
     janitor,
     readr,
@@ -25,6 +26,10 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    ConfusionTableR, 
+    NHSDataDictionaRy
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)

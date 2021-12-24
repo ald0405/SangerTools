@@ -7,11 +7,15 @@
 #' @param col_names If columns are named; defaults to TRUE
 #' @return a data frame object full of file paths
 #' @examples
-#' \dontrun{
-#' combined_csv_files <- multiple_csv_reader("Inputs/",1,TRUE)}
+#' library(SangerTools)
+#' file_path = 'my_file_path_where_csvs_are_stored'
+#'if (length(SangerTools::multiple_csv_reader(file_path))==0){
+#'  message("This won't work without changing the variable input to a local file path with CSVs in")
+#'}
 #' @export
 
-multiple_csv_reader <- function(file_path, rows_to_skip = 0, col_names = TRUE) {
+multiple_csv_reader <- function(file_path, rows_to_skip = 0,
+                                col_names = TRUE) {
   list_of_files <-
     list.files(path = file_path,
                full.names = TRUE,

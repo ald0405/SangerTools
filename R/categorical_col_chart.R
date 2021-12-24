@@ -16,13 +16,14 @@
 #' @importFrom ggthemes scale_fill_economist
 #' @importFrom magrittr %>%
 #' @examples
-#' \dontrun{
+#' library(SangerTools)
+#' library(dplyr)
 #' library(ggplot2)
-#' library(scales)
-#' library(magrittr)
-#' library(ggthemes)
-#' categorical_col_chart(gapminder,Continent)
-#' }
+#' # Group by Age Band
+#' health_data <- SangerTools::PopHealthData
+#' health_data %>%
+#'  dplyr::filter(Smoker==1) %>%
+#'  SangerTools::categorical_col_chart(AgeBand) + labs(x="Ethnicity", y="Patient Number")
 #' @export
 
 categorical_col_chart <- function(df, grouping_var){
@@ -41,3 +42,4 @@ categorical_col_chart <- function(df, grouping_var){
   return(p1)
 
 }
+

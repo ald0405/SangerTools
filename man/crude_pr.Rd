@@ -28,8 +28,12 @@ This function utilises the Tidyverse framework of Non-Standard Evaluation.
 As such arguments are passed to the function without quotation.
 }
 \examples{
-\dontrun{
-library(tidyverse)
-crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
-}
+library(SangerTools)
+library(dplyr)
+health_data <- SangerTools::PopHealthData
+glimpse(health_data)
+# Generate crude prevalene rate stats
+crude_prevalence <- SangerTools::crude_pr(health_data, health_data \%>\%
+dplyr::filter(Diabetes==1), Locality)
+print(crude_prevalence)
 }

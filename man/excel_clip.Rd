@@ -3,27 +3,33 @@
 \name{excel_clip}
 \alias{excel_clip}
 \title{Dataframe to Clipboard
-This function copies a dataframe to your clipboard.}
+This function copies a data frame to your clipboard.}
 \usage{
-excel_clip(df, row_names = FALSE, col_names = TRUE, ...)
+excel_clip(x, row.names = FALSE, col.names = TRUE, ...)
 }
 \arguments{
-\item{df}{Dataframe}
+\item{x}{Dataframe}
 
-\item{row_names}{Set to FALSE}
+\item{row.names}{Set to FALSE for row.names not to be included}
 
-\item{col_names}{Set to TRUE}
+\item{col.names}{Set to TRUE for col.names to be included}
 
-\item{...}{function forwarding}
+\item{...}{function forwarding for additional write.table functionality}
 }
 \value{
 a data frame copied to your clipboard
 }
 \description{
 Dataframe to Clipboard
-This function copies a dataframe to your clipboard.
+This function copies a data frame to your clipboard.
 }
 \examples{
-\dontrun{
-excel_clip(dataframe)}
+library(SangerTools)
+library(dplyr)
+# Group by Age Band
+health_data <- SangerTools::PopHealthData
+health_data \%>\%
+ slice(1:10) \%>\%
+ SangerTools::excel_clip(row.names = FALSE, col.names = TRUE)
+ # Message: Your Item is Now Copied to Clipboard
 }
