@@ -8,10 +8,13 @@
 #' @return a data frame object full of file paths
 #' @examples
 #' \dontrun{
+#' library(SangerTools)
+#' #Allows for the loading of multiple CSVs from a specified folder
 #' combined_csv_files <- multiple_csv_reader("Inputs/",1,TRUE)}
 #' @export
 
-multiple_csv_reader <- function(file_path, rows_to_skip = 0, col_names = TRUE) {
+multiple_csv_reader <- function(file_path, rows_to_skip = 0,
+                                col_names = TRUE) {
   list_of_files <-
     list.files(path = file_path,
                full.names = TRUE,

@@ -20,11 +20,9 @@ Plot Counts of Categorical Variables
 Create a ggplot2 column chart of categorical variables with proportions, in ascending order.
 }
 \examples{
-\dontrun{
-library(ggplot2)
-library(scales)
-library(magrittr)
-library(ggthemes)
-categorical_col_chart(gapminder,Continent)
-}
+library(SangerTools)
+library(gapminder)
+# Generate a plot using the gap minder dataset
+plot <- categorical_col_chart(gapminder,continent)
+print(plot)
 }

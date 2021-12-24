@@ -11,20 +11,25 @@ Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: AGPL (>= 3)
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 RoxygenNote: 7.1.2
 Imports: 
-    dplyr, 
     ggplot2, 
+    dplyr, 
     scales,
     janitor,
     readr,
     utils, 
     ggthemes, 
-    magrittr
+    magrittr,
+    gapminder
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    ConfusionTableR, 
+    NHSDataDictionaRy
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)

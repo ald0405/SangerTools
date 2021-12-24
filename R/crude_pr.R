@@ -10,7 +10,9 @@
 #' @importFrom dplyr left_join group_by summarise mutate arrange n
 #' @examples
 #' \dontrun{
-#' library(tidyverse)
+#' library(SangerTools)
+#' library(gapminder)
+#' df <- gapminder
 #' crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
 #' }
 

@@ -1,0 +1,131 @@
+---
+title: "SangerTools Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SangerTools_Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<p><a href=""><img src = "figures/sangertoolshex.png" width = "125px" height = "150px" align="right"></a></p>
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height= 5, 
+  fig.width=7
+)
+```
+
+
+
+
+```{r setup, echo=FALSE, include=FALSE}
+library(SangerTools)
+library(dplyr)
+library(ggplot2)
+```
+
+
+# Welcome to the SangerTools package
+
+This package has been created to provide you convenience functions for working with population health data and is specifically aimed at healthcare providers and services that focus on population health management. 
+
+In the next sections we will take you through how you use the tool. This tool will expand over time, as we already have a million ideas of how to adapt and add to the tool. 
+
+## Loading in the PopHealthData
+
+To load in the PopHealthData attached to the SangerTools package. This is extremely simple, as the data is attached to the package. To load the data into R follow these steps:
+
+```{r load_data}
+health_data <- SangerTools::PopHealthData
+glimpse(health_data)
+```
+
+The data contains:
+
+- Sex of the patient (Sex)
+- Whether the patient is a smoker (Smoker)
+- Indication by binary flag that the patient is diabetic (Diabetes)
+- Age band of the patient at the time of presentation to the service (AgeBand)
+- IMD decile - this is the indices of multiple deprivation and looks at the level of deprivation, by geography, for that patient (IMD_Decile)
+- Ethnicity of the patient is captured as a nominal representation (Ethnicity)
+- Locality - the locality the patient resides in (Locality)
+- Primary Care Network is the network associated to the patients clinical commissioning group (CCG)
+
+
+With the data we can start to work with the function in the package.
+
+## Generating a categorical column chart easily
+
+The package makes it very simple to create a categorical column chart. This will be implemented in the next example:
+
+```{r categorical_column_chart}
+# Group by Ethnicity
+health_data %>% 
+  dplyr::filter(Diabetes==1) %>% 
+  SangerTools::categorical_col_chart(., Ethnicity)
+
+# Group by Age Band
+health_data %>% 
+  dplyr::filter(Smoker==1) %>% 
+  SangerTools::categorical_col_chart(AgeBand) + labs(x="Ethnicity", y="Patient Number")
+
+# Group by Sex
+health_data %>% 
+  dplyr::filter(Diabetes==1) %>% 
+  SangerTools::categorical_col_chart(Sex) + labs(x="Gender")
+```
+
+It really is that simple to generate very nice looking proportional charts. 
+
+## Crude prevalence rate outputs
+
+To obtain the crude prevalance rate, this can be achieved below:
+
+```{r crude_prev}
+crude_prevalence <- SangerTools::crude_pr(health_data, health_data %>% dplyr::filter(Diabetes==1), Locality)
+# Another way
+print(crude_prevalence)
+
+```
+
+Other functionality added into the package would be to use the multiple CSV reader and clipboard functions.
+
+## Excel Clipboard function
+
+This essentially copies a data frame to the clipboard for you for then pasting into Excel sheets, or csvs, or raw text.
+
+```{r copy_to_clipboard}
+health_data %>%
+  slice(1:10) %>%
+  SangerTools::excel_clip(row.names = FALSE, col.names = TRUE) #Include column names
+
+```
+
+There is the potential to read from multiple CSVs as well and then these can be fed into data frames.
+
+
+## Multiple CSV reader
+
+To implement this function you would need to have a number of CSVs contained in a folder. To read these in, follow the below instructions:
+
+```{r multiple_csv_reader}
+file_path = 'my_file_path_where_csvs_are_stored'
+
+if (length(SangerTools::multiple_csv_reader(file_path))==0){
+  message("This won't work without changing the variable input to a local file path with CSVs in")
+}
+
+
+
+```
+
+This will need to link to a series of CSV files. 
+
+
+## Closing 
+
+More functions are being added to this tool and a new version of the file will be released on CRAN very soon. Keep an eye out on the associated [GitHub](https://github.com/ald0405/SangerTools) for updates, and make sure to pull down the most recent version from CRAN. 
+

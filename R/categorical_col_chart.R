@@ -16,13 +16,11 @@
 #' @importFrom ggthemes scale_fill_economist
 #' @importFrom magrittr %>%
 #' @examples
-#' \dontrun{
-#' library(ggplot2)
-#' library(scales)
-#' library(magrittr)
-#' library(ggthemes)
-#' categorical_col_chart(gapminder,Continent)
-#' }
+#' library(SangerTools)
+#' library(gapminder)
+#' # Generate a plot using the gap minder dataset
+#' plot <- categorical_col_chart(gapminder,continent)
+#' print(plot)
 #' @export
 
 categorical_col_chart <- function(df, grouping_var){
@@ -41,3 +39,11 @@ categorical_col_chart <- function(df, grouping_var){
   return(p1)
 
 }
+
+
+
+
+
+
+library(gapminder)
+data <- gapminder

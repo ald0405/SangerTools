@@ -29,7 +29,9 @@ As such arguments are passed to the function without quotation.
 }
 \examples{
 \dontrun{
-library(tidyverse)
+library(SangerTools)
+library(gapminder)
+df <- gapminder
 crude_pr(dataset_base_pop,dataset_condition_pop,Ethnicity)
 }
 }
