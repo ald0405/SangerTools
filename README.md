@@ -1,6 +1,15 @@
 # SangerTools
 
 
+ <!-- badges: start -->
+  [![R-CMD-check](https://github.com/ald0405/SangerTools/workflows/R-CMD-check/badge.svg)](https://github.com/ald0405/SangerTools/actions)
+  [![](https://cranlogs.r-pkg.org/badges/ConfusionTableR)](https://cran.r-project.org/package=ConfusionTableR)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/ald0405/SangerTools)
+  ![GitHub Repo stars](https://img.shields.io/github/stars/ald0405/SangerTools?label=SangerToolsR%20Stars)
+  <!-- badges: end -->
+
+
+
 [![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/)
 
 [![Gary](https://i.stack.imgur.com/gVE0j.png) Gary](https://www.linkedin.com/in/ghutson/)
