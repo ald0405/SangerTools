@@ -17,14 +17,15 @@ Useful R tools
 
 
 # Package Aims 
-The functions and included examples are created to mimic data found at 
-NHS Gloucestershire CCG. Many of the functions are written in tidyverse
 
-The dataset included is random dataset generated based on proportions from Gloucestershire County. 
+This package has been created with the UK's National Health Service analytical workforce in mind; however we hope to aid analytical workers around to world in 
+easy implementation of population health management techniques. 
 
-This package is aimed at novice and intermediate R users as they work with patient level data. 
+The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. Many of the functions are written in tidyverse.
 
-Aids those working with 
+The dataset included is random dataset generated based on proportions from Gloucestershire County; see vignette 
+
+We have hope this package aids those working with 
 * Patient Level Data
 * Population Health Management
 * Patient Cohorting 
