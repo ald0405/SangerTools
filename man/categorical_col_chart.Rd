@@ -21,6 +21,8 @@ Create a ggplot2 column chart of categorical variables with proportions, in asce
 }
 \examples{
 library(SangerTools)
+library(dplyr)
+library(ggplot2)
 # Group by Age Band
 health_data <- SangerTools::PopHealthData
 health_data \%>\%

@@ -8,6 +8,7 @@
 #' @return a data frame copied to your clipboard
 #' @examples
 #' library(SangerTools)
+#' library(dplyr)
 #' # Group by Age Band
 #' health_data <- SangerTools::PopHealthData
 #' health_data %>%

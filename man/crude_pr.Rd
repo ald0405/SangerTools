@@ -29,9 +29,11 @@ As such arguments are passed to the function without quotation.
 }
 \examples{
 library(SangerTools)
+library(dplyr)
 health_data <- SangerTools::PopHealthData
 glimpse(health_data)
 # Generate crude prevalene rate stats
-crude_prevalence <- SangerTools::crude_pr(health_data, health_data \%>\% dplyr::filter(Diabetes==1), Locality)
+crude_prevalence <- SangerTools::crude_pr(health_data, health_data \%>\%
+dplyr::filter(Diabetes==1), Locality)
 print(crude_prevalence)
 }

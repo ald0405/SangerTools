@@ -17,6 +17,8 @@
 #' @importFrom magrittr %>%
 #' @examples
 #' library(SangerTools)
+#' library(dplyr)
+#' library(ggplot2)
 #' # Group by Age Band
 #' health_data <- SangerTools::PopHealthData
 #' health_data %>%
