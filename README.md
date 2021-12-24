@@ -2,9 +2,9 @@
 
 
  <!-- badges: start -->
-  [![R-CMD-check](https://github.com/ald0405/SangerTools/workflows/R-CMD-check/badge.svg)](https://github.com/ald0405/SangerTools/actions)
   ![GitHub last commit](https://img.shields.io/github/last-commit/ald0405/SangerTools)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/ald0405/SangerTools?label=SangerToolsR%20Stars)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/ald0405/SangerTools?label=SangerToolsR%20Stars)
   <!-- badges: end -->
 
 
@@ -16,17 +16,13 @@
 Useful R tools
 
 
-
-:hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :syringe: :syringe: :syringe:
-
-# <p style="color:blue"> Target Audience </p>  
-
-This package as aimed at novice and intermediate R users as they work with patient level data. 
-# Overall Framework 
+# Package Aims 
 The functions and included examples are created to mimic data found at 
 NHS Gloucestershire CCG. Many of the functions are written in tidyverse
 
+The dataset included is random dataset generated based on proportions from Gloucestershire County. 
 
+This package is aimed at novice and intermediate R users as they work with patient level data. 
 
 Aids those working with 
 * Patient Level Data
@@ -47,5 +43,6 @@ library(SangerTools)
 
 Still a work in progress......
 
+:hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :hospital: :syringe: :syringe: :syringe:
 
 [![GitHub stats](https://github-readme-stats.vercel.app/api?username=ald0405)](https://github.com/anuraghazra/github-readme-stats)
