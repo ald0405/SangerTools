@@ -1,4 +1,4 @@
-#' Crude Prevalence Rate
+#' Crude Prevalence Rate.
 #' Calculate a group's Crude Prevalence Rate (Rate Per 1,000).
 #' This is created to work with datasets that have 1 row per individual and Columns as variables.
 #' This function utilises the Tidyverse framework of Non-Standard Evaluation.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/crude_pr.R
 \name{crude_pr}
 \alias{crude_pr}
-\title{Crude Prevalence Rate
+\title{Crude Prevalence Rate.
 Calculate a group's Crude Prevalence Rate (Rate Per 1,000).
 This is created to work with datasets that have 1 row per individual and Columns as variables.
 This function utilises the Tidyverse framework of Non-Standard Evaluation.
@@ -21,7 +21,7 @@ crude_pr(dataset_base_pop, dataset_condition_pop, demographic)
 a ggplot object
 }
 \description{
-Crude Prevalence Rate
+Crude Prevalence Rate.
 Calculate a group's Crude Prevalence Rate (Rate Per 1,000).
 This is created to work with datasets that have 1 row per individual and Columns as variables.
 This function utilises the Tidyverse framework of Non-Standard Evaluation.
