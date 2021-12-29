@@ -7,6 +7,7 @@
 #' @param ... function forwarding for additional write.table functionality
 #' @return a data frame copied to your clipboard
 #' @examples
+#' \dontrun{
 #' library(SangerTools)
 #' library(dplyr)
 #' # Group by Age Band
@@ -15,6 +16,7 @@
 #'  slice(1:10) %>%
 #'  SangerTools::excel_clip(row.names = FALSE, col.names = TRUE)
 #'  # Message: Your Item is Now Copied to Clipboard
+#'  }
 #' @export
 
 excel_clip <- function(x,
