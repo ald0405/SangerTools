@@ -3,7 +3,7 @@
 #' @return A customised ggplot2 plot
 #' @importFrom ggthemes theme_fivethirtyeight
 #' @importFrom ggplot2 element_blank element_rect
-#' @importFrom ggplot2 element_text element_line
+#' @importFrom ggplot2 element_text element_line theme
 #' @importFrom ggtext element_markdown
 #' @examples
 #' library(SangerTools)
