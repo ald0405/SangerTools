@@ -13,17 +13,21 @@
 
 ## Package Aims 
 
-This package has been created with the UK's National Health Service analytical workforce in mind; however we hope to aid analytical workers around to world in 
-easy implementation of population health management techniques. 
+Sanger Tools has been created for the UK's National Health Service (NHS) analytical workforce. However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
+The tools in this package have been created to efficiently analyse and navigate datasets which contain patient level data. Ie 1 Row per patient; in tidy data format; where each row is an observation and columns are variables.  This format is commonly seeing across the NHS being referred to a Master Patient Index (MPI)
+The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. Many of the functions are written in Tidyverse.
 
-The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. Many of the functions are written in tidyverse.
+## Vignette
+The dataset included is random dataset generated based on proportions from Gloucestershire County; <a href="https://www.rpubs.com/StatsGary/851661">see vignette</a> 
+The vignette on how to use the package is available .
 
-The dataset included is random dataset generated based on proportions from Gloucestershire County; see vignette 
-
-We have hope this package aids those working with 
+We hope this package aids those working with 
 * Patient Level Data
 * Population Health Management
 * Patient Cohorting 
+
+SangerTools is still under construction, and we will be releasing updates in Q1 2022
+
 
 ## Installing the package from GitHub
 
