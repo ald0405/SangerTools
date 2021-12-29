@@ -1,4 +1,5 @@
 #' Display Extended Brand Colour Palette
+#' Displays extended brand colour palette for charting
 #' @return a Base R plot object
 #' @importFrom scales show_col
 #' @examples

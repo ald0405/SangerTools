@@ -1,7 +1,7 @@
 Package: SangerTools
 Type: Package
 Title: A Package with Tools to Improve Analytical Staff Efficiency
-Version: 0.1.0
+Version: 1.0.1
 Authors@R: c(
           person("Asif", "Laldin", , "laldin.asif@gmail.com", c("aut", "cre")),
           person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
@@ -22,7 +22,9 @@ Imports:
     readr,
     utils, 
     ggthemes, 
-    magrittr
+    magrittr,
+    readxl,
+    ggtext
 Suggests: 
     knitr,
     rmarkdown,
@@ -33,3 +35,4 @@ Config/testthat/edition: 3
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
+Language: en-gb
