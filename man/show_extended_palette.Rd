@@ -2,7 +2,8 @@
 % Please edit documentation in R/show_extended_palette.R
 \name{show_extended_palette}
 \alias{show_extended_palette}
-\title{Display Extended Brand Colour Palette}
+\title{Display Extended Brand Colour Palette
+Displays extended brand colour palette for charting}
 \usage{
 show_extended_palette()
 }
@@ -11,6 +12,7 @@ a Base R plot object
 }
 \description{
 Display Extended Brand Colour Palette
+Displays extended brand colour palette for charting
 }
 \examples{
 library(scales)

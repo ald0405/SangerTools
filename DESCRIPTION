@@ -22,7 +22,8 @@ Imports:
     readr,
     utils, 
     ggthemes, 
-    magrittr
+    magrittr,
+    readxl
 Suggests: 
     knitr,
     rmarkdown,
