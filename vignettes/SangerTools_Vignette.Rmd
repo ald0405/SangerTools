@@ -99,9 +99,9 @@ Other functionality added into the package would be to use the multiple CSV read
 This essentially copies a data frame to the clipboard for you for then pasting into Excel sheets, or csvs, or raw text.
 
 ```{r copy_to_clipboard}
-health_data %>%
-  slice(1:10) %>%
-  SangerTools::excel_clip(row.names = FALSE, col.names = TRUE) #Include column names
+#health_data %>%
+ # slice(1:10) %>%
+  #SangerTools::excel_clip(row.names = FALSE, col.names = TRUE) #Include column names
 
 ```
 
