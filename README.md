@@ -13,25 +13,35 @@
 
 ## Package Aims 
 
-Sanger Tools has been created for the UK's National Health Service (NHS) analytical workforce. However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
-The tools in this package have been created to efficiently analyse and navigate datasets which contain patient level data. Ie 1 Row per patient; in tidy data format; where each row is an observation and columns are variables.  This format is commonly seeing across the NHS being referred to a Master Patient Index (MPI)
-The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. Many of the functions are written in Tidyverse.
+Sanger Tools has been created for the UK's National Health Service (NHS) analytical workforce who work with patient level data. 
 
-## Vignette
-The dataset included is random dataset generated based on proportions from Gloucestershire County; <a href="https://www.rpubs.com/StatsGary/851661">see vignette</a> 
-The vignette on how to use the package is available .
+However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
+
+
+The package draws its name from Sanger House; the office in which NHS Gloucestershire CCG's analytical team are based. 
+
+
+The tools in this package have been created to efficiently analyse and navigate datasets which contain patient level data. Ie 1 Row per patient; in tidy data format; where each row is an observation and columns are variables.  This format is commonly seeing across the NHS being referred to a Master Patient Index (MPI)
+The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. 
+
+
+Many of the functions are written in Tidyverse.
+
 
 We hope this package aids those working with 
 * Patient Level Data
-* Population Health Management
 * Patient Cohorting 
+* Data Visulisations
 
-SangerTools is still under construction, and we will be releasing updates in Q1 2022
+## Further Releases
+SangerTools is still under construction and we will be releasing updates in Q1 2022.
 
+
+If you have specific analytical tool needs in the areas of Population Health Management please contact a.laldin@nhs.net 
 
 ## Installing the package from GitHub
 
-Here, I will use the package remotes to install the package:
+You can install the package using the following commands
 
 ``` r
 # install.packages("remotes") # if not already installed
@@ -41,6 +51,8 @@ library(SangerTools)
 ```
 ## Installing the package from CRAN
 
+
+Please note we are currently in the process of releasing Sanger Tools to CRAN
 ``` r
 # install.packages("SangerTools")
 library(SangerTools)
@@ -58,6 +70,6 @@ Check out the statistics of the repo below:
 [![GitHub stats](https://github-readme-stats.vercel.app/api?username=ald0405)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Contributors and Authors
-[![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Consultant working with clinical commissioning groups
+[![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant working with Clinical Commissioning Groups
 
 [![Gary](https://i.stack.imgur.com/gVE0j.png) Gary](https://www.linkedin.com/in/ghutson/) - Head of Machine Learning and Senior NHS-R Fellow
