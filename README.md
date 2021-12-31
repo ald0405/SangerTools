@@ -11,8 +11,8 @@
  
   <!-- badges: end -->
 
-## Package Aims 
 
+## Background
 Sanger Tools has been created for the UK's National Health Service (NHS) analytical workforce who work with patient level data. 
 
 However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
@@ -20,12 +20,13 @@ However, we hope Sanger Tools aids analytical workers around to world who work w
 
 The package draws its name from Sanger House; the office in which NHS Gloucestershire CCG's analytical team are based. 
 
-
+## Package Aims 
 The tools in this package have been created to efficiently analyse and navigate datasets which contain patient level data. Ie 1 Row per patient; in tidy data format; where each row is an observation and columns are variables.  This format is commonly seeing across the NHS being referred to a Master Patient Index (MPI)
 The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. 
 
+Many of the functions are written in Tidyverse; as such there will be performance limitations on larger datasets. 
 
-Many of the functions are written in Tidyverse.
+
 
 
 We hope this package aids those working with 
@@ -63,13 +64,9 @@ library(SangerTools)
 
 To learn how to use the package, check out the [vignette](https://rpubs.com/StatsGary/851661) on RPubs.
 
-## We are trending
-
-Check out the statistics of the repo below:
-
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=ald0405)](https://github.com/anuraghazra/github-readme-stats)
-
 ## Contributors and Authors
 [![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant working with Clinical Commissioning Groups
 
 [![Gary](https://i.stack.imgur.com/gVE0j.png) Gary](https://www.linkedin.com/in/ghutson/) - Head of Machine Learning and Senior NHS-R Fellow
+
+
