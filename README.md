@@ -6,10 +6,15 @@
   [![R-CMD-check](https://github.com/ald0405/SangerTools/workflows/R-CMD-check/badge.svg)](https://github.com/ald0405/SangerTools/actions)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ald0405/SangerTools)
 ![GitHub Repo stars](https://img.shields.io/github/stars/ald0405/SangerTools?label=SangerToolsR%20Stars)
- [![CRAN status](https://www.r-pkg.org/badges/version/ConfusionTableR)](https://CRAN.R-project.org/package=SangerTools) 
+ [![CRAN status](https://www.r-pkg.org/badges/version/SangerTools)](https://CRAN.R-project.org/package=SangerTools) 
  [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SangerTools)](https://cran.r-project.org/package=SangerTools)
- 
-  <!-- badges: end -->
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/ald0405/SangerTools/blob/master/LICENSE)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/ald0405/SangerTools?branch=master&svg=true)](https://ci.appveyor.com/project/ald0405/SangerTools)
+
+<!-- badges: end -
+
+<!-- badges: end -->
 
 
 ## Background
