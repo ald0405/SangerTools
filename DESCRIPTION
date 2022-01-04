@@ -1,6 +1,6 @@
 Package: SangerTools
 Type: Package
-Title: A Package with Tools to Improve Analytical Staff Efficiency
+Title: Tools for Population Health Management Analytics
 Version: 1.0.1
 Authors@R: c(
           person("Asif", "Laldin", , "laldin.asif@gmail.com", c("aut", "cre")),
