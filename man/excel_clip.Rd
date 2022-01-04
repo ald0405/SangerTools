@@ -23,15 +23,3 @@ a data frame copied to your clipboard
 Dataframe to Clipboard
 This function copies a data frame to your clipboard.
 }
-\examples{
-\donttest{
-library(SangerTools)
-library(dplyr)
-# Group by Age Band
-health_data <- SangerTools::PopHealthData
-health_data \%>\%
- slice(1:10) \%>\%
- SangerTools::excel_clip(row.names = FALSE, col.names = TRUE)
- # Message: Your Item is Now Copied to Clipboard
- }
-}
