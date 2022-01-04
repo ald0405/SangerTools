@@ -24,7 +24,7 @@ Dataframe to Clipboard
 This function copies a data frame to your clipboard.
 }
 \examples{
-\dontrun{
+\donttest{
 library(SangerTools)
 library(dplyr)
 # Group by Age Band

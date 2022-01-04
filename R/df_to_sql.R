@@ -6,6 +6,8 @@
 #' @param sql_table_name The name that `dataframe` will be referred to in SQL database
 #' @param ... Function forwarding for additional functionality
 #' @return A DataFrame or Tibble written to a SQL database of your choice
+#' @importFrom DBI dbConnect Id dbWriteTable
+#' @importFrom odbc odbc
 #' @examples
 #' \dontrun{
 #' library(odbc)

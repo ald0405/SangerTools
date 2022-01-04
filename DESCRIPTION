@@ -24,7 +24,9 @@ Imports:
     ggthemes, 
     magrittr,
     readxl,
-    ggtext
+    ggtext,
+    DBI,
+    odbc
 Suggests: 
     knitr,
     rmarkdown,
