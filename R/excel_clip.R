@@ -7,7 +7,7 @@
 #' @param ... function forwarding for additional write.table functionality
 #' @return a data frame copied to your clipboard
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' library(SangerTools)
 #' library(dplyr)
 #' # Group by Age Band
