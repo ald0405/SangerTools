@@ -7,9 +7,9 @@ Authors@R: c(
           person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
           )
 Maintainer: Asif Laldin <laldin.asif@gmail.com>
-Description: This has functionality for population health analytics and monitoring.
-    Allowing for visuals and data frames to be developed quickly.
-    This ease means that the package can used by a number of NHS bodies and health service providers.
+Description: This package has functionality for population health analytics and monitoring.
+    The functions in this package work best when working with patient level Master Patient Indexes .
+    The has been created so that it canbe  used by a number of NHS bodies and health service providers.
 License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
