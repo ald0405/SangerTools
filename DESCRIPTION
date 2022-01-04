@@ -7,9 +7,9 @@ Authors@R: c(
           person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
           )
 Maintainer: Asif Laldin <laldin.asif@gmail.com>
-Description: This package has functionality for population health analytics and monitoring.
-    The functions in this package work best when working with patient level Master Patient Indexes .
-    The has been created so that it canbe  used by a number of NHS bodies and health service providers.
+Description: Created for population health analytics and monitoring.
+    The functions in this package work best when working with patient level Master Patient Index-like datasets .
+    Built to be used by  NHS bodies and other health service providers.
 License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -30,9 +30,7 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0),
-    ConfusionTableR, 
-    NHSDataDictionaRy
+    testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Depends: 
