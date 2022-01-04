@@ -3,6 +3,7 @@
 export("%>%")
 export(categorical_col_chart)
 export(crude_pr)
+export(df_to_sql)
 export(excel_clip)
 export(multiple_csv_reader)
 export(multiple_excel_reader)
