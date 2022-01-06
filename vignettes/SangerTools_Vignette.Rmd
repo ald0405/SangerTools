@@ -31,7 +31,7 @@ library(scales)
 
 # Welcome to the SangerTools package
 
-This package has been created to provide you convenience functions for working with population health data and is specifically aimed at healthcare providers and services that focus on population health management. 
+This package has been created to provide you convenient functions for working with population health data and is specifically aimed at healthcare providers and services that focus on population health management. 
 
 In the next sections we will take you through how you use the tool. This tool will expand over time, as we already have a million ideas of how to adapt and add to the tool. 
 
