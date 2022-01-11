@@ -26,7 +26,8 @@ Imports:
     readxl,
     ggtext,
     DBI,
-    odbc
+    odbc,
+    rlang
 Suggests: 
     knitr,
     rmarkdown,
