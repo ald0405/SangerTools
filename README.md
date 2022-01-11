@@ -40,7 +40,7 @@ We hope this package aids those working with
 * Data Visulisations
 
 ## Further Releases
-SangerTools is still under construction and we will be releasing updates in Q1 2022.
+SangerTools is still under construction and we will be incrementally adding new features with another release to CRAN in Q1 2022.
 
 
 If you have specific analytical tool needs in the areas of Population Health Management please contact a.laldin@nhs.net 
@@ -58,7 +58,6 @@ library(SangerTools)
 ## Installing the package from CRAN
 
 
-Please note we are currently in the process of releasing Sanger Tools to CRAN
 ``` r
 # install.packages("SangerTools")
 library(SangerTools)
