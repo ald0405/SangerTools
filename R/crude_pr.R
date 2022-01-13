@@ -6,7 +6,7 @@
 #' @param dataset_base_pop A dataframe containing 1 row per patient of an entire population
 #' @param dataset_condition_pop A dataframe containing 1 row per patient of the population with a given condition
 #' @param demographic This the grouping variable over which the rates with be calculated
-#' @return a ggplot object
+#' @return a tibble with calculated rate per 1000
 #' @importFrom dplyr left_join group_by summarise mutate arrange n
 #' @examples
 #' library(SangerTools)

@@ -12,7 +12,11 @@ show_brand_palette <- function() {
              "#0061BA",
              "#3BBCD9",
              "#223873",
-             "#71B72B"
-             )
+             "#71B72B")
            )
+  print(c("#9880BB",
+             "#0061BA",
+             "#3BBCD9",
+             "#223873",
+             "#71B72B"))
 }

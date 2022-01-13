@@ -18,7 +18,7 @@ crude_pr(dataset_base_pop, dataset_condition_pop, demographic)
 \item{demographic}{This the grouping variable over which the rates with be calculated}
 }
 \value{
-a ggplot object
+a tibble with calculated rate per 1000
 }
 \description{
 Crude Prevalence Rate.
