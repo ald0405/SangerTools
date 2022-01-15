@@ -22,7 +22,7 @@ Sanger Tools has been created for the UK's National Health Service (NHS) staff w
 
 However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
 
-Currently this will largely traget CCG and CSU staff and we hope that this helps to nurture colaboration between teams as many NHS organisations transition into ICS's.  
+Currently this will  target CCG and CSU staff and we hope that this nurtures colaboration between teams as many NHS organisations transition into ICS's.  
 
 If you are using this package outside of the NHS we would be very keen to hear from you! 
 
