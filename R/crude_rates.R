@@ -1,8 +1,8 @@
 #' Crude Prevalence Calculator
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData
-#' @param Condition A Health condition flag denoted by 1 & 0
-#' @param ... Grouping variables ie Locality; use at least 1, when multiple seperate by comma
-#' @return a tibble Rates Per 1,000 calculated
+#' @param Condition A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition
+#' @param ... Variables used to standardise by; Must always have Ageband, additional variables are optional
+#' @return a tibble with Crude Prevalence Rates(Rate per 1,000) for each value included in ...
 #' @importFrom dplyr left_join group_by summarise mutate arrange n
 #' @importFrom magrittr %>%
 #' @importFrom rlang :=

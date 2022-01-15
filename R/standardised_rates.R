@@ -1,12 +1,12 @@
 #' Direct Standardised Prevalence Rates
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData
-#' @param Geography Column name denoting column with location string names
-#' @param LocalityA A character string within @param Geography must be passed within ""
-#' @param LocalityB A character string with @param Geography must be passed within ""
-#' @param Condition A Health condition flag denoted by 1 & 0
-#' @param Population_Standard Population Standard Weight for Standardising; defaults to NULL which will use Age Structure of @param  df
-#' @param Verbose Takes boolean value to determine function output printing
-#' @param ... Variables to Standardise by; Must always have Ageband, additional variables are optional
+#' @param Geography Column name using NSE;passed without quotation denoting column where @param LocalityA and @param LocalityB are contained
+#' @param LocalityA A value within @param Geography using SE; must be passed within quotation
+#' @param LocalityB A value within @param Geography using SE; must be passed within quotation
+#' @param Condition A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition
+#' @param Population_Standard Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of @param  df
+#' @param Verbose Takes a boolean value to determine function output printing. TRUE will print two dataframes however they will be different to the the output of the function
+#' @param ... Variables used to standardise by; Must always have Ageband, additional variables are optional
 #' @return List of length 2 containing 2 tibbles with standardised rates for @param LocalityA and @param LocalityB
 #' @importFrom dplyr ungroup count summarise group_by n mutate left_join pull rename filter enquos
 #' @importFrom janitor clean_names

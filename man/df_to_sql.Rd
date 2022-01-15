@@ -4,23 +4,23 @@
 \alias{df_to_sql}
 \title{DataFrame to SQL; Write your DataFrame or Tibble directly to SQL from R}
 \usage{
-df_to_sql(dataframe, driver, server, database, sql_table_name, ...)
+df_to_sql(df, driver, server, database, sql_table_name, ...)
 }
 \arguments{
-\item{dataframe}{A DataFrame or Tibble ie PopHealthData}
+\item{df}{A DataFrame or Tibble ie PopHealthData}
 
-\item{driver}{A driver for database ie "SQL Server"}
+\item{driver}{A driver for database ie "SQL Server"; must be passed in quotation}
 
-\item{server}{The unique name of your database server}
+\item{server}{The unique name of your database server; must be passed in quotation}
 
-\item{database}{The name of the database to which you will write `dataframe`}
+\item{database}{The name of the database to which you will write `df`; must be passed in quotation}
 
-\item{sql_table_name}{The name that `dataframe` will be referred to in SQL database}
+\item{sql_table_name}{The name that `df` will be referred to in SQL database; must be passed in quotation}
 
 \item{...}{Function forwarding for additional functionality}
 }
 \value{
-A DataFrame or Tibble written to a SQL database of your choice
+A message confirming that a new  table has been created in a SQL `database`
 }
 \description{
 DataFrame to SQL; Write your DataFrame or Tibble directly to SQL from R

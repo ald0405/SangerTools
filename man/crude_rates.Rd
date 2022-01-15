@@ -9,12 +9,12 @@ crude_rates(df, Condition, ...)
 \arguments{
 \item{df}{a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData}
 
-\item{Condition}{A Health condition flag denoted by 1 & 0}
+\item{Condition}{A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition}
 
-\item{...}{Grouping variables ie Locality; use at least 1, when multiple seperate by comma}
+\item{...}{Variables used to standardise by; Must always have Ageband, additional variables are optional}
 }
 \value{
-a tibble Rates Per 1,000 calculated
+a tibble with Crude Prevalence Rates(Rate per 1,000) for each value included in ...
 }
 \description{
 Crude Prevalence Calculator
