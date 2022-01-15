@@ -18,32 +18,26 @@ Status](https://ci.appveyor.com/api/projects/status/github/ald0405/SangerTools?b
 
 
 ## Background
-Sanger Tools has been created for the UK's National Health Service (NHS) analytical workforce who work with patient level data. 
+Sanger Tools has been created for the UK's National Health Service (NHS) staff working with patient level population health data. 
 
 However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
 
+Currently this will largely traget CCG and CSU staff and we hope that this helps to nurture colaboration between teams as many NHS organisations transition into ICS's.  
+
+If you are using this package outside of the NHS we would be very keen to hear from you! 
 
 The package draws its name from Sanger House; the office in which NHS Gloucestershire CCG's analytical team are based. 
 
 ## Package Aims 
-The tools in this package have been created to efficiently analyse and navigate datasets which contain patient level data. Ie 1 Row per patient; in tidy data format; where each row is an observation and columns are variables.  This format is commonly seeing across the NHS being referred to a Master Patient Index (MPI)
-The functions and included examples are created to mimic data found at NHS Gloucestershire CCG. 
+The tools in this package have been created to aid in the day to day work undertaken by most NHS analysts. Many funcions have been created to provide an easy-to-use interface for common tasks where analysts are working between R, SQL and Excel. Many of the functions are created to work with datasets which contain 1 Row Per Patient in tidy data format; where each row is an observation and columns are variables pertaining to the patient.  This format is commonly seen across the NHS; often referred to as Master Patient Index (MPI).
 
+## API Notes
 Many of the functions are written in Tidyverse; as such there will be performance limitations on larger datasets. 
-
-
-
-
-We hope this package aids those working with 
-* Patient Level Data
-* Patient Cohorting 
-* Data Visulisations
+Please take care to read to the documentation and included examples as the functions in this package use a combination of Standard Evalutation (Base R) and [Non-Standard Evalutation](https://dplyr.tidyverse.org/articles/programming.html) (Tidyverse). 
 
 ## Further Releases
 SangerTools is still under construction and we will be incrementally adding new features with another release to CRAN in Q1 2022.
 
-
-If you have specific analytical tool needs in the areas of Population Health Management please contact a.laldin@nhs.net 
 
 ## Installing the package from GitHub
 
