@@ -29,7 +29,7 @@ If you are using this package outside of the NHS we would be very keen to hear f
 The package draws its name from Sanger House; the office in which NHS Gloucestershire CCG's analytical team are based. 
 
 ## Package Aims 
-The tools in this package have been created to aid in the day to day work undertaken by most NHS analysts. Many funcions have been created to provide an easy-to-use interface for common tasks where analysts are working between R, SQL and Excel. Many of the functions are created to work with datasets which contain 1 Row Per Patient in tidy data format; where each row is an observation and columns are variables pertaining to the patient.  This format is commonly seen across the NHS; often referred to as Master Patient Index (MPI).
+The tools in this package have been created to assist in every-day tasks undertaken by most NHS analysts. Funcions have been created to provide an easy-to-use interface for common tasks where analysts are working between R, SQL and Excel. Many of the functions are created to work with datasets which contain 1 Row Per Patient in tidy data format; where each row is an observation and columns are variables pertaining to the patient.  This format is commonly seen across the NHS; often referred to as Master Patient Index (MPI).
 
 ## API Notes
 Many of the functions are written in Tidyverse; as such there will be performance limitations on larger datasets. 
