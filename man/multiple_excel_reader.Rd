@@ -23,5 +23,6 @@ This function reads multiple Xlsx files in a directory must be same structure.
 }
 \examples{
 \dontrun{
-combined_excel_files <- multiple_excel_reader("Inputs/",1,TRUE)}
+combined_excel_files <- multiple_excel_reader("Inputs/", 1, TRUE)
+}
 }

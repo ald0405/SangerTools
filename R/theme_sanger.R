@@ -10,8 +10,8 @@
 #' library(ggthemes)
 #' library(ggplot2)
 #' library(ggtext)
-#' categorical_col_chart(SangerTools::PopHealthData,Locality) +
-#' theme_sanger()
+#' categorical_col_chart(SangerTools::PopHealthData, Locality) +
+#'   theme_sanger()
 #' @export
 theme_sanger <- function() {
   theme_fivethirtyeight() +
@@ -27,6 +27,5 @@ theme_sanger <- function() {
       axis.line = element_line(size = 3, colour = "grey80"),
       axis.title = element_text(color = "#292929", face = "bold"),
       axis.text = element_text(color = "#292929", face = "bold")
-  )
-
+    )
 }

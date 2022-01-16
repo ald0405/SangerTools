@@ -23,8 +23,8 @@ This function reads multiple CSVs in a directory must be same structure.
 }
 \examples{
 library(SangerTools)
-file_path = 'my_file_path_where_csvs_are_stored'
-if (length(SangerTools::multiple_csv_reader(file_path))==0){
- message("This won't work without changing the variable input to a local file path with CSVs in")
+file_path <- "my_file_path_where_csvs_are_stored"
+if (length(SangerTools::multiple_csv_reader(file_path)) == 0) {
+  message("This won't work without changing the variable input to a local file path with CSVs in")
 }
 }

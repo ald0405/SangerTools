@@ -12,4 +12,3 @@
 #'   \item{PrimaryCareNetwork}{The primary care network of the patient}
 #'  }
 "PopHealthData"
-

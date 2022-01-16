@@ -25,6 +25,6 @@ library(dplyr)
 health_data <- SangerTools::PopHealthData
 glimpse(health_data)
 # Generate crude prevalene rate stats
-crude_prevalence <- SangerTools::crude_rates(health_data,Diabetes,Locality)
+crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
 print(crude_prevalence)
 }

@@ -8,27 +8,28 @@
 #' @return a data frame object full of file paths
 #' @examples
 #' library(SangerTools)
-#' file_path = 'my_file_path_where_csvs_are_stored'
-#'if (length(SangerTools::multiple_csv_reader(file_path))==0){
-#'  message("This won't work without changing the variable input to a local file path with CSVs in")
-#'}
+#' file_path <- "my_file_path_where_csvs_are_stored"
+#' if (length(SangerTools::multiple_csv_reader(file_path)) == 0) {
+#'   message("This won't work without changing the variable input to a local file path with CSVs in")
+#' }
 #' @export
 
 multiple_csv_reader <- function(file_path, rows_to_skip = 0,
                                 col_names = TRUE) {
   list_of_files <-
-    list.files(path = file_path,
-               full.names = TRUE,
-               pattern = "*.csv")
+    list.files(
+      path = file_path,
+      full.names = TRUE,
+      pattern = "*.csv"
+    )
 
   all <-
     lapply(list_of_files,
-           read_csv,
-           skip = rows_to_skip,
-           col_names = col_names
-           )
+      read_csv,
+      skip = rows_to_skip,
+      col_names = col_names
+    )
   all_cleaned <- lapply(all, clean_names)
   final_table <- do.call(rbind, all_cleaned)
   return(final_table)
-
 }

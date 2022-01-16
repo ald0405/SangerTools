@@ -7,20 +7,20 @@
 df_to_sql(df, driver, server, database, sql_table_name, ...)
 }
 \arguments{
-\item{df}{A DataFrame or Tibble ie PopHealthData}
+\item{df}{A `dataFrame` or `tibble` ie PopHealthData.}
 
-\item{driver}{A driver for database ie "SQL Server"; must be passed in quotation}
+\item{driver}{A driver for database ie "SQL Server"; must be passed in quotation.}
 
-\item{server}{The unique name of your database server; must be passed in quotation}
+\item{server}{The unique name of your database server; must be passed in quotation.}
 
-\item{database}{The name of the database to which you will write `df`; must be passed in quotation}
+\item{database}{The name of the database to which you will write `df`; must be passed in quotation.}
 
-\item{sql_table_name}{The name that `df` will be referred to in SQL database; must be passed in quotation}
+\item{sql_table_name}{The name that `df` will be referred to in SQL database; must be passed in quotation.}
 
-\item{...}{Function forwarding for additional functionality}
+\item{...}{Function forwarding for additional functionality.}
 }
 \value{
-A message confirming that a new  table has been created in a SQL `database`
+A message confirming that a new  table has been created in a SQL `database`.
 }
 \description{
 DataFrame to SQL; Write your DataFrame or Tibble directly to SQL from R
@@ -30,9 +30,11 @@ DataFrame to SQL; Write your DataFrame or Tibble directly to SQL from R
 library(odbc)
 library(DBI)
 health_data <- SangerTools::PopHealthData
-df_to_sql(dataframe = health_data,
-            driver  = "SQL SERVER",
-           database = "DATABASE",
-     sql_table_name = "New Table Name")
+df_to_sql(
+  dataframe = health_data,
+  driver = "SQL SERVER",
+  database = "DATABASE",
+  sql_table_name = "New Table Name"
+)
 }
 }

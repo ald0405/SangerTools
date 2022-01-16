@@ -22,6 +22,4 @@ excel_clip <- function(x,
   )
 
   message("Your Item is Now Copied to Clipboard")
-
 }
-

@@ -15,25 +15,24 @@
 #' glimpse(health_data)
 #' # Generate crude prevalene rate stats
 #' crude_prevalence <- SangerTools::crude_pr(health_data, health_data %>%
-#' dplyr::filter(Diabetes==1), Locality)
+#'   dplyr::filter(Diabetes == 1), Locality)
 #' print(crude_prevalence)
 #' @export
-crude_pr <- function(dataset_base_pop,dataset_condition_pop,demographic){
-  denominator <- {{dataset_base_pop}}  %>%
-    group_by({{demographic}})  %>%
-    summarise(demo_pop = n() )
+crude_pr <- function(dataset_base_pop, dataset_condition_pop, demographic) {
+  denominator <- {{ dataset_base_pop }} %>%
+    group_by({{ demographic }}) %>%
+    summarise(demo_pop = n())
 
-  numerator <- {{dataset_condition_pop}}  %>%
-    group_by({{demographic}})  %>%
-    summarise(condition_pop = n() )
+  numerator <- {{ dataset_condition_pop }} %>%
+    group_by({{ demographic }}) %>%
+    summarise(condition_pop = n())
 
 
-  final_df <- left_join(denominator, numerator)  %>%
+  final_df <- left_join(denominator, numerator) %>%
     mutate(prevalance_1k = (condition_pop / demo_pop) * 1000) %>%
     arrange(desc(prevalance_1k))
 
 
 
   return(final_df)
-
 }

@@ -27,7 +27,8 @@ Imports:
     ggtext,
     DBI,
     odbc,
-    rlang
+    rlang,
+    tibble
 Suggests: 
     knitr,
     rmarkdown,

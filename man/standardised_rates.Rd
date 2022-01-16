@@ -16,24 +16,24 @@ standardised_rates(
 )
 }
 \arguments{
-\item{df}{a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData}
+\item{df}{a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.}
 
-\item{Geography}{Column name using NSE;passed without quotation denoting column where @param LocalityA and @param LocalityB are contained}
+\item{Geography}{Column name using NSE;passed without quotation denoting column where @param LocalityA and @param LocalityB are contained.}
 
-\item{LocalityA}{A value within @param Geography using SE; must be passed within quotation}
+\item{LocalityA}{A value within @param Geography using SE; must be passed within quotation.}
 
-\item{LocalityB}{A value within @param Geography using SE; must be passed within quotation}
+\item{LocalityB}{A value within @param Geography using SE; must be passed within quotation.}
 
-\item{Condition}{A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition}
+\item{Condition}{A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition.}
 
-\item{Population_Standard}{Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of @param  df}
+\item{Population_Standard}{Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of @param  df .}
 
-\item{Verbose}{Takes a boolean value to determine function output printing. TRUE will print two dataframes however they will be different to the the output of the function}
+\item{Verbose}{Takes a boolean value to determine function output printing. TRUE will print two dataframes however they will be different to the the output of the function.}
 
-\item{...}{Variables used to standardise by; Must always have Ageband, additional variables are optional}
+\item{...}{Variables used to standardise by; Must always have Ageband, additional variables are optional and should be passed separated by commas.}
 }
 \value{
-List of length 2 containing 2 tibbles with standardised rates for @param LocalityA and @param LocalityB
+List of length 2 containing 2 tibbles with standardised rates for @param LocalityA and @param LocalityB .
 }
 \description{
 Direct Standardised Prevalence Rates

@@ -19,6 +19,6 @@ library(SangerTools)
 library(ggthemes)
 library(ggplot2)
 library(ggtext)
-categorical_col_chart(SangerTools::PopHealthData,Locality) +
-theme_sanger()
+categorical_col_chart(SangerTools::PopHealthData, Locality) +
+  theme_sanger()
 }

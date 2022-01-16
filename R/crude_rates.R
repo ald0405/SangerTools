@@ -12,23 +12,22 @@
 #' health_data <- SangerTools::PopHealthData
 #' glimpse(health_data)
 #' # Generate crude prevalene rate stats
-#' crude_prevalence <- SangerTools::crude_rates(health_data,Diabetes,Locality)
+#' crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
 #' print(crude_prevalence)
 #' @export
 
-crude_rates <- function (df,Condition,...) {
-
+crude_rates <- function(df, Condition, ...) {
   group_var <- enquos(...)
 
-denominator <- df %>%
+  denominator <- df %>%
     group_by(!!!group_var) %>%
     summarise(Cohort_Size = n(), .groups = "drop")
 
 
 
   numerator <- df %>%
-       group_by(!!!group_var) %>%
-       filter({{Condition}} == 1) %>%
+    group_by(!!!group_var) %>%
+    filter({{ Condition }} == 1) %>%
     summarise(condition_pop := n(), .groups = "drop")
 
 
@@ -38,7 +37,5 @@ denominator <- df %>%
     arrange(desc(Prevalence_1k)) %>%
     rename("{{Condition}}_Population" := condition_pop)
 
-    return(final_df)
-
+  return(final_df)
 }
-

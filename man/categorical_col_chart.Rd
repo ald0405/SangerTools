@@ -26,6 +26,6 @@ library(ggplot2)
 # Group by Age Band
 health_data <- SangerTools::PopHealthData
 health_data \%>\%
- dplyr::filter(Smoker==1) \%>\%
- SangerTools::categorical_col_chart(AgeBand) + labs(x="Ethnicity", y="Patient Number")
+  dplyr::filter(Smoker == 1) \%>\%
+  SangerTools::categorical_col_chart(AgeBand) + labs(x = "Ethnicity", y = "Patient Number")
 }

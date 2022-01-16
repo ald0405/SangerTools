@@ -8,15 +8,18 @@
 #' show_brand_palette()
 #' @export
 show_brand_palette <- function() {
-  show_col(c("#9880BB",
-             "#0061BA",
-             "#3BBCD9",
-             "#223873",
-             "#71B72B")
-           )
-  print(c("#9880BB",
-             "#0061BA",
-             "#3BBCD9",
-             "#223873",
-             "#71B72B"))
+  show_col(c(
+    "#9880BB",
+    "#0061BA",
+    "#3BBCD9",
+    "#223873",
+    "#71B72B"
+  ))
+  print(c(
+    "#9880BB",
+    "#0061BA",
+    "#3BBCD9",
+    "#223873",
+    "#71B72B"
+  ))
 }
