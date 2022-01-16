@@ -85,10 +85,10 @@ It really is that simple to generate very nice looking proportional charts.
 
 To obtain the crude prevalance rate, this can be achieved below:
 
-```{r crude_prev}
-crude_prevalence <- SangerTools::crude_pr(health_data, health_data %>% dplyr::filter(Diabetes==1), Locality)
-# Another way
-print(crude_prevalence)
+```{r crude_rates}
+ crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
+ # Another way
+ print(crude_prevalence)
 
 ```
 
