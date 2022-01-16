@@ -3,7 +3,6 @@
 export("%>%")
 export(age_bandizer)
 export(categorical_col_chart)
-export(compare_standardised_rates)
 export(crude_rates)
 export(df_to_sql)
 export(excel_clip)
