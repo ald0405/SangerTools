@@ -18,7 +18,12 @@ Status](https://ci.appveyor.com/api/projects/status/github/ald0405/SangerTools?b
 
 
 ## Background
-Sanger Tools has been created for the UK's National Health Service (NHS) staff working with patient level population health data. 
+
+
+Sanger Tools was born out of necessity. 
+
+It is the formal aggregation of a set of coding solutions used daily to carry out Population Health Management Analytics; rapidly and consistently. It provides a foundation to bridge the gap between the unholy trifecta of R, Excel & SQL. Some functions move data from a SQL Server Database to R, and the converse as well as Excel to R.  
+It has has been created specifically for Gloucestershire CCG and wider National Health Service (NHS) staff working with patient level population health data. 
 
 However, we hope Sanger Tools aids analytical workers around to world who work with similar datasets. 
 
