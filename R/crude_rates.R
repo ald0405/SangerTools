@@ -17,25 +17,31 @@
 #' @export
 
 crude_rates <- function(df, Condition, ...) {
-  group_var <- enquos(...)
 
-  denominator <- df %>%
-    group_by(!!!group_var) %>%
-    summarise(Cohort_Size = n(), .groups = "drop")
+  if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
+    stop("Check Input df: Non Tibble or DataFrame Object Detected")
+  } else {
 
+    group_var <- enquos(...)
 
-
-  numerator <- df %>%
-    group_by(!!!group_var) %>%
-    filter({{ Condition }} == 1) %>%
-    summarise(condition_pop := n(), .groups = "drop")
+    denominator <- df %>%
+      group_by(!!!group_var) %>%
+      summarise(Cohort_Size = n(), .groups = "drop")
 
 
 
-  final_df <- left_join(denominator, numerator) %>%
-    mutate(Prevalence_1k = (condition_pop / Cohort_Size) * 1000) %>%
-    arrange(desc(Prevalence_1k)) %>%
-    rename("{{Condition}}_Population" := condition_pop)
+    numerator <- df %>%
+      group_by(!!!group_var) %>%
+      filter({{ Condition }} == 1) %>%
+      summarise(condition_pop := n(), .groups = "drop")
+
+
+
+    final_df <- left_join(denominator, numerator) %>%
+      mutate(Prevalence_1k = (condition_pop / Cohort_Size) * 1000) %>%
+      arrange(desc(Prevalence_1k)) %>%
+      rename("{{Condition}}_Population" := condition_pop)
 
   return(final_df)
+  }
 }

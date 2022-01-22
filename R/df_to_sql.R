@@ -28,34 +28,33 @@ df_to_sql <- function(df,
                       database,
                       sql_table_name,
                       ...) {
-
-  if(is_tibble(df) == FALSE | is.data.frame(df) == FALSE){
-        stop("Check Input df: Non Tibble or DataFrame Object Detected")
+  if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
+    stop("Check Input df: Non Tibble or DataFrame Object Detected")
   } else {
-# Establish Connection[Will only work based on OS Login Credentials]
-  con <- dbConnect(
-    odbc(),
-    Driver = driver,
-    Server = server,
-    Database = database,
-    Trusted_Connection = "True"
-  )
-# Format SQL Table Name String
-  table_name <- Id(
-    schema = "DBO",
-    table = sql_table_name
-  )
-# Write Table to Database
-  dbWriteTable(
-    conn = con,
-    name = table_name,
-    value = df,
-    overwrite = TRUE,
-    row.names = FALSE
-  )
-  message(
-    "\nData ", " Written to ",
-    "[", database, "]", ".[DBO]", ".[", as.character(table_name@name)[2], "]"
-  )
-}
+    # Establish Connection[Will only work based on OS Login Credentials]
+    con <- dbConnect(
+      odbc(),
+      Driver = driver,
+      Server = server,
+      Database = database,
+      Trusted_Connection = "True"
+    )
+    # Format SQL Table Name String
+    table_name <- Id(
+      schema = "DBO",
+      table = sql_table_name
+    )
+    # Write Table to Database
+    dbWriteTable(
+      conn = con,
+      name = table_name,
+      value = df,
+      overwrite = TRUE,
+      row.names = FALSE
+    )
+    message(
+      "\nData ", " Written to ",
+      "[", database, "]", ".[DBO]", ".[", as.character(table_name@name)[2], "] by", Sys.info()[[6]]
+    )
   }
+}

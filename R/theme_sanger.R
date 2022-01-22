@@ -19,11 +19,13 @@ theme_sanger <- function() {
       text = element_text(),
       panel.background = element_blank(),
       panel.grid.minor = element_blank(),
+      panel.grid.major = element_blank(),
       plot.background = element_rect("#EBEBEB"),
       plot.title = element_markdown(color = "#0061BA"),
       plot.subtitle = element_markdown(color = "#292929", face = "italic"),
       plot.caption = element_markdown(color = "#292929", face = "bold"),
       strip.text.x = element_text(colour = "white", face = "bold"),
+      strip.background = element_rect(fill = "darkgrey"),
       axis.line = element_line(size = 3, colour = "grey80"),
       axis.title = element_text(color = "#292929", face = "bold"),
       axis.text = element_text(color = "#292929", face = "bold")

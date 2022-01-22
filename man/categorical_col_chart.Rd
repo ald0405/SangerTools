@@ -27,5 +27,9 @@ library(ggplot2)
 health_data <- SangerTools::PopHealthData
 health_data \%>\%
   dplyr::filter(Smoker == 1) \%>\%
-  SangerTools::categorical_col_chart(AgeBand) + labs(x = "Ethnicity", y = "Patient Number")
+  SangerTools::categorical_col_chart(AgeBand) +
+  labs(title = "Smoking Population by Age Band",
+       subtitle = "Majority of Smokers are Working Aged ",
+       x = NULL,
+       y = "Patient Number")
 }
