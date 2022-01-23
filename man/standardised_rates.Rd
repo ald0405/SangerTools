@@ -36,5 +36,12 @@ standardised_rates(
 List of length 2 containing 2 tibbles with standardised rates for @param LocalityA and @param LocalityB .
 }
 \description{
-Direct Standardised Prevalence Rates
+Ideal for providing standardised prevalence comparisons of two populations specified by `LocalityA` and `LocalityB`.
+Message printing displays standardised  rates and a comparative between the two populations. The ratio
+is presented as `LocalityA`:`LocalityB`,whereby a number greater than 1 signifies
+`LocalityA` having a higher rate, while a number less than one signifies `LocalityA` having a lower
+rate. Outputs printed via `Verbose = TRUE`, are different to outputs returned.
+The returned output, a list of length 2,has column names cleaned by `janitor::clean_names()`
+and a new name column corresponding to `LocalityA`and `LocalityB`. This was done
+with downstream ggplot2 plotting in mind.
 }

@@ -1,4 +1,13 @@
 #' Direct Standardised Prevalence Rates
+#' @description
+#' Ideal for providing standardised prevalence comparisons of two populations specified by `LocalityA` and `LocalityB`.
+#' Message printing displays standardised  rates and a comparative between the two populations. The ratio
+#' is presented as `LocalityA`:`LocalityB`,whereby a number greater than 1 signifies
+#' `LocalityA` having a higher rate, while a number less than one signifies `LocalityA` having a lower
+#' rate. Outputs printed via `Verbose = TRUE`, are different to outputs returned.
+#' The returned output, a list of length 2,has column names cleaned by `janitor::clean_names()`
+#' and a new name column corresponding to `LocalityA`and `LocalityB`. This was done
+#' with downstream ggplot2 plotting in mind.
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.
 #' @param Geography Column name using NSE;passed without quotation denoting column where @param LocalityA and @param LocalityB are contained.
 #' @param LocalityA A value within @param Geography using SE; must be passed within quotation.

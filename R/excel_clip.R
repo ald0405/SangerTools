@@ -1,25 +1,31 @@
 #' Dataframe to Clipboard
-#' This function copies a data frame to your clipboard.
+#' @description
+#' This function copies a data frame to your clipboard in a format that allows
+#' for a simple paste into excel whilst maintaining column and row structure.
+#' By default row_names has been set to FALSE.
 #' @importFrom utils write.table
-#' @param x Dataframe
-#' @param row.names Set to FALSE for row.names not to be included
-#' @param col.names Set to TRUE for col.names to be included
+#' @param df A dataframe or tibble
+#' @param row_names Set to FALSE for row.names not to be included
+#' @param col_names Set to TRUE for col.names to be included
 #' @param ... function forwarding for additional write.table functionality
 #' @return a data frame copied to your clipboard
 #' @export
 
-excel_clip <- function(x,
-                       row.names = FALSE,
-                       col.names = TRUE,
+excel_clip <- function(df,
+                       row_names = FALSE,
+                       col_names = TRUE,
                        ...) {
+  if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
+    warning("Check Input df: Non Tibble or DataFrame Object Detected")
+  } else {
   write.table(
-    x,
+    df,
     "clipboard",
     sep = "\t",
-    row.names = row.names,
-    col.names = col.names,
+    row.names = row_names,
+    col.names = col_names,
     ...
   )
-
-  message("Your Item is Now Copied to Clipboard")
+}
+  message("Your DataFrame is Now Copied to Clipboard & Can Be Pasted")
 }

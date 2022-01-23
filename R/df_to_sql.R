@@ -1,4 +1,10 @@
 #' DataFrame to SQL; Write your DataFrame or Tibble directly to SQL from R
+#' @description
+#' This wrapper functions allows for the easy movement of your computed results in R
+#' to a SQL Database for saving. The function uses a ODBC driver to establish a connection.
+#' You will need to select a Database that your user has write-access to. The user
+#' credentials are the same as your OS login details; as such this function will
+#' most likely only work from you work computer.
 #' @param df A `dataFrame` or `tibble` ie PopHealthData.
 #' @param driver A driver for database ie "SQL Server"; must be passed in quotation.
 #' @param server The unique name of your database server; must be passed in quotation.

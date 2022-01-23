@@ -1,4 +1,9 @@
 #' Standardised Prevalence Rates in Tibble format.
+#' @description
+#' standardised_rates_df() performs the same calculation as standardised_rates();
+#' however rather than explicitly selecting two groups, this calculation is performed
+#' for all unique values in the column passed to `split_by`. This is a more generalised function
+#' and will pair well with `excel_clip()` and `df_to_sql()`.
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.
 #' @param Split_by A column name within df for which the standardised rates will be calculated for.
 #' @param Condition A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition.
