@@ -24,26 +24,30 @@
 #' health_data %>%
 #'   dplyr::filter(Smoker == 1) %>%
 #'   SangerTools::categorical_col_chart(AgeBand) +
-#'   labs(title = "Smoking Population by Age Band",
-#'        subtitle = "Majority of Smokers are Working Aged ",
-#'        x = NULL,
-#'        y = "Patient Number")
+#'   labs(
+#'     title = "Smoking Population by Age Band",
+#'     subtitle = "Majority of Smokers are Working Aged ",
+#'     x = NULL,
+#'     y = "Patient Number"
+#'   )
 #' @export
 
 categorical_col_chart <- function(df, grouping_var) {
-  p1 <-  df  %>%
+  p1 <- df %>%
     dplyr::group_by({{ grouping_var }}) %>%
     dplyr::summarise(patients_n = n()) %>%
     dplyr::mutate(proportion = patients_n / sum(patients_n)) %>%
     ggplot(aes(reorder({{ grouping_var }}, patients_n), patients_n, fill = {{ grouping_var }})) +
-    geom_col(show.legend = FALSE,alpha = 0.7) +
+    geom_col(show.legend = FALSE, alpha = 0.7) +
     geom_label(aes(label = paste0(round((proportion * 100), 2), "%"), size = 12),
       show.legend = FALSE, nudge_y = -0.2
     ) +
-    scale_fill_manual(values = c("#9880BB","#0061BA","#71B72B","#3BBCD9","#223873",
-                                 "#D585BA" ,"#007761" ,"#4D8076",
-                                 "#00C9A7", "#4A4453" ,"#C27767", "#D5CABD"))+
-    scale_y_continuous(labels = comma)+
+    scale_fill_manual(values = c(
+      "#9880BB", "#0061BA", "#71B72B", "#3BBCD9", "#223873",
+      "#D585BA", "#007761", "#4D8076",
+      "#00C9A7", "#4A4453", "#C27767", "#D5CABD"
+    )) +
+    scale_y_continuous(labels = comma) +
     theme_sanger()
   return(p1)
 }

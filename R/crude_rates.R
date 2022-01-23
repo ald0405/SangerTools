@@ -17,11 +17,9 @@
 #' @export
 
 crude_rates <- function(df, Condition, ...) {
-
   if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
     stop("Check Input df: Non Tibble or DataFrame Object Detected")
   } else {
-
     group_var <- enquos(...)
 
     denominator <- df %>%
@@ -42,6 +40,6 @@ crude_rates <- function(df, Condition, ...) {
       arrange(desc(Prevalence_1k)) %>%
       rename("{{Condition}}_Population" := condition_pop)
 
-  return(final_df)
+    return(final_df)
   }
 }
