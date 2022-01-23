@@ -11,7 +11,10 @@
 #' library(ggplot2)
 #' library(ggtext)
 #' categorical_col_chart(SangerTools::PopHealthData, Locality) +
-#'   theme_sanger()
+#'   theme_sanger()+
+#'   labs(title = "Categorical Column Chart",
+#'   x = "Locality",
+#'   y = "Number of Patients")
 #' @export
 theme_sanger <- function() {
   theme_fivethirtyeight() +
@@ -26,7 +29,7 @@ theme_sanger <- function() {
       plot.caption = element_markdown(color = "#292929", face = "bold"),
       strip.text.x = element_text(colour = "white", face = "bold"),
       strip.background = element_rect(fill = "darkgrey"),
-      axis.line = element_line(size = 3, colour = "grey80"),
+      axis.line = element_blank(),
       axis.title = element_text(color = "#292929", face = "bold"),
       axis.text = element_text(color = "#292929", face = "bold")
     )

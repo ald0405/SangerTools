@@ -20,5 +20,8 @@ library(ggthemes)
 library(ggplot2)
 library(ggtext)
 categorical_col_chart(SangerTools::PopHealthData, Locality) +
-  theme_sanger()
+  theme_sanger()+
+  labs(title = "Categorical Column Chart",
+  x = "Locality",
+  y = "Number of Patients")
 }
