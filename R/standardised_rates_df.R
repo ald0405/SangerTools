@@ -65,3 +65,4 @@ standardised_rates_df <- function(df, Split_by, Condition, Population_Standard, 
 
   return(output)
 }
+
