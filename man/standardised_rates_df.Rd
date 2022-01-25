@@ -4,7 +4,14 @@
 \alias{standardised_rates_df}
 \title{Standardised Prevalence Rates in Tibble format.}
 \usage{
-standardised_rates_df(df, Split_by, Condition, Population_Standard, ...)
+standardised_rates_df(
+  df,
+  Split_by,
+  Condition,
+  Population_Standard,
+  Granular = FALSE,
+  ...
+)
 }
 \arguments{
 \item{df}{a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.}
@@ -15,10 +22,13 @@ standardised_rates_df(df, Split_by, Condition, Population_Standard, ...)
 
 \item{Population_Standard}{Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of df.}
 
-\item{...}{Variables used to standardise by; Must always have Ageband, additional variables are optional and should be passed separated by commas.}
+\item{Granular}{Takes a boolean value. If set to TRUE will output a tibble with Standardised Rates using values provided in `Split_col` and `...`
+By default is set to FALSE.}
+
+\item{...}{Variables used to standardise by; Must always have Age band for age standardisation, additional variables are optional and should be passed separated by commas.}
 }
 \value{
-A tibble containing Standardised Prevalence Rates by specified group.
+A tibble containing standardised Prevalence Rates by specified group.
 }
 \description{
 standardised_rates_df() performs the same calculation as standardised_rates();
@@ -36,4 +46,20 @@ df_rates <- standardised_rates_df(
   AgeBand
 )
 print(df_rates)
+
+# If using user defined population Structure
+library(SangerTools)
+user_standard_pop <- PopHealthData \%>\%
+ group_by(AgeBand) \%>\%
+ count("Pop Weight")
+
+df_rates2 <- standardised_rates_df(
+  df = PopHealthData,
+  Split_by = Locality,
+  Condition = Diabetes,
+  Population_Standard = user_standard_pop,
+  Granular = TRUE,
+  AgeBand
+  )
+print(df_rates2)
 }
