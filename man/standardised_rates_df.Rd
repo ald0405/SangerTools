@@ -22,8 +22,7 @@ standardised_rates_df(
 
 \item{Population_Standard}{Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of df.}
 
-\item{Granular}{Takes a boolean value. If set to TRUE will output a tibble with Standardised Rates using values provided in `Split_col` and `...`
-By default is set to FALSE.}
+\item{Granular}{Takes a boolean value. If set to TRUE will output a tibble with Standardised Rates using values provided in `Split_col` and `...`By default is set to FALSE.}
 
 \item{...}{Variables used to standardise by; Must always have Age band for age standardisation, additional variables are optional and should be passed separated by commas.}
 }
@@ -43,23 +42,8 @@ df_rates <- standardised_rates_df(
   Split_by = Locality,
   Condition = Diabetes,
   Population_Standard = NULL,
+  Granular = TRUE,
   AgeBand
 )
 print(df_rates)
-
-# If using user defined population Structure
-library(SangerTools)
-user_standard_pop <- PopHealthData \%>\%
- group_by(AgeBand) \%>\%
- count("Pop Weight")
-
-df_rates2 <- standardised_rates_df(
-  df = PopHealthData,
-  Split_by = Locality,
-  Condition = Diabetes,
-  Population_Standard = user_standard_pop,
-  Granular = TRUE,
-  AgeBand
-  )
-print(df_rates2)
 }

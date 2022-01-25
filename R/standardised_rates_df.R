@@ -8,8 +8,7 @@
 #' @param Split_by A column name within df for which the standardised rates will be calculated for.
 #' @param Condition A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition.
 #' @param Population_Standard Population Standard Weight used for Standardising; default set to NULL; which denotes  use of Age Structure of df.
-#' @param Granular Takes a boolean value. If set to TRUE will output a tibble with Standardised Rates using values provided in `Split_col` and `...`
-#' By default is set to FALSE.
+#' @param Granular Takes a boolean value. If set to TRUE will output a tibble with Standardised Rates using values provided in `Split_col` and `...`By default is set to FALSE.
 #' @param ... Variables used to standardise by; Must always have Age band for age standardisation, additional variables are optional and should be passed separated by commas.
 #' @return A tibble containing standardised Prevalence Rates by specified group.
 #' @importFrom dplyr ungroup count summarise group_by n mutate left_join pull rename filter enquos pull
@@ -20,26 +19,10 @@
 #'   Split_by = Locality,
 #'   Condition = Diabetes,
 #'   Population_Standard = NULL,
+#'   Granular = TRUE,
 #'   AgeBand
 #' )
 #' print(df_rates)
-#'
-#' # If using user defined population Structure
-#' library(SangerTools)
-
-#' user_standard_pop <- PopHealthData %>%
-#'  group_by(AgeBand) %>%
-#'  count("Pop Weight")
-#'
-#'df_rates2 <- standardised_rates_df(
-#'   df = PopHealthData,
-#'   Split_by = Locality,
-#'   Condition = Diabetes,
-#'   Population_Standard = user_standard_pop,
-#'   Granular = TRUE,
-#'   AgeBand
-#'   )
-#'print(df_rates2)
 #' @export
 #'
 standardised_rates_df <- function(df, Split_by, Condition, Population_Standard,Granular = FALSE, ...) {
