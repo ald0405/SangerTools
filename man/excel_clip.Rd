@@ -2,7 +2,7 @@
 % Please edit documentation in R/excel_clip.R
 \name{excel_clip}
 \alias{excel_clip}
-\title{Dataframe to Clipboard}
+\title{Copy Dataframe or Tibble to Clipboard}
 \usage{
 excel_clip(df, row_names = FALSE, col_names = TRUE, ...)
 }
@@ -19,7 +19,7 @@ excel_clip(df, row_names = FALSE, col_names = TRUE, ...)
 a data frame copied to your clipboard
 }
 \description{
-This function copies a data frame to your clipboard in a format that allows
+This function copies a data frame or tibble to your clipboard in a format that allows
 for a simple paste into excel whilst maintaining column and row structure.
 By default row_names has been set to FALSE.
 }
