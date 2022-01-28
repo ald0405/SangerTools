@@ -30,8 +30,7 @@ standardised_rates_df(
 A tibble containing standardised Prevalence Rates by specified group.
 }
 \description{
-standardised_rates_df() performs the same calculation as standardised_rates();
-however rather than explicitly selecting two groups, this calculation is performed
+This calculation is performed
 for all unique values in the column passed to `split_by`. This is a more generalised function
 and will pair well with `excel_clip()` and `df_to_sql()`.
 }
