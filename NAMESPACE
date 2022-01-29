@@ -2,7 +2,9 @@
 
 export("%>%")
 export(age_bandizer)
+export(age_bandizer_2)
 export(categorical_col_chart)
+export(cohort_processing)
 export(crude_rates)
 export(df_to_sql)
 export(excel_clip)

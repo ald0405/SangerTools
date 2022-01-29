@@ -19,6 +19,8 @@
 #' )
 #' print(df_agebanded)
 #' }
+#' @export
+#'
 age_bandizer_2 <- function(df, Age_col, Age_band_size = 5) {
   if (!is.numeric(df[, Age_col]) | sum(is.na(df[, Age_col])) > 0) {
 
@@ -42,4 +44,3 @@ age_bandizer_2 <- function(df, Age_col, Age_band_size = 5) {
     return(df)
   }
 }
-

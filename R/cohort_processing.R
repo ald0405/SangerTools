@@ -13,7 +13,7 @@
 #' @param suffix A file name suffix, default is "_REID_V01", To be left as blank use "", without spaces.
 #' @return n number of CSV files written to the location specified by path argument.
 #' @importFrom readr write_csv
-#'
+#' @export
 cohort_processing <- function(df,Split_by,path,prefix = "DSCRO",com_code = "11M",date_format = "%Y%m%d",suffix = "_REID_V01") {
 
   # Split Dataframe by Organisational Identifier
