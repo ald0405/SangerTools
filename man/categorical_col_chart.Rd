@@ -2,8 +2,7 @@
 % Please edit documentation in R/categorical_col_chart.R
 \name{categorical_col_chart}
 \alias{categorical_col_chart}
-\title{Plot Counts of Categorical Variables
-Create a ggplot2 column chart of categorical variables with proportions, in ascending order.}
+\title{Plot Counts of Categorical Variables}
 \usage{
 categorical_col_chart(df, grouping_var)
 }
@@ -16,8 +15,17 @@ categorical_col_chart(df, grouping_var)
 a ggplot2 object
 }
 \description{
-Plot Counts of Categorical Variables
-Create a ggplot2 column chart of categorical variables with proportions, in ascending order.
+Create a ggplot2 column chart of categorical variables with labels, in ascending order.
+A `theme_sanger()` will be applied, y-axis labels will have a comma for every third integer value.
+If the column provided to `grouping_var` has more than approximately 5 values, you may need to consider
+rotating x axis labels using
+
+`+ theme(axis.text.x = element_text(angle = , vjust = , hjust= ))`
+
+
+A comprehensive explanation of ggplot2 customisation is available here
+
+https://ggplot2.tidyverse.org/reference/theme.html
 }
 \examples{
 library(SangerTools)

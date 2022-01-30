@@ -1,5 +1,16 @@
-#' Plot Counts of Categorical Variables
-#' Create a ggplot2 column chart of categorical variables with proportions, in ascending order.
+#' @title  Plot Counts of Categorical Variables
+#' @description
+#' Create a ggplot2 column chart of categorical variables with labels, in ascending order.
+#' A `theme_sanger()` will be applied, y-axis labels will have a comma for every third integer value.
+#' If the column provided to `grouping_var` has more than approximately 5 values, you may need to consider
+#' rotating x axis labels using
+#'
+#' `+ theme(axis.text.x = element_text(angle = , vjust = , hjust= ))`
+#'
+#'
+#' A comprehensive explanation of ggplot2 customisation is available here
+#'
+#' https://ggplot2.tidyverse.org/reference/theme.html
 #' @param df A dataframe with categorical variables
 #' @param grouping_var a categorical variable by which to group the count by
 #' @return a ggplot2 object
@@ -43,8 +54,8 @@ categorical_col_chart <- function(df, grouping_var) {
       show.legend = FALSE, nudge_y = -0.2
     ) +
     scale_fill_manual(values = c(
-      "#9880BB", "#0061BA", "#71B72B", "#3BBCD9", "#223873",
-      "#D585BA", "#007761", "#4D8076",
+      "#9880BB", "#0061BA", "#71B72B", "#3BBCD9",
+      "#223873", "#D585BA", "#007761", "#4D8076",
       "#00C9A7", "#4A4453", "#C27767", "#D5CABD"
     )) +
     scale_y_continuous(labels = comma) +
