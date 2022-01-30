@@ -14,7 +14,7 @@ age_bandizer_2(df, Age_col, Age_band_size = 5)
 \item{Age_band_size}{The size of the Age band to use. Defaults to 5; will take values 2,5,10,20.}
 }
 \value{
-A dataframe with a new column `Ageband`
+A dataframe containing a new column `Ageband` which has factor levels defined.
 }
 \description{
 An alternative age banding function that allows users greater flexibility for defining band size.

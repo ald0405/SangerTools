@@ -7,7 +7,7 @@
 #' @param df A dataframe with a numerical column denoting Age.
 #' @param Age_col A numerical column within `df`; passed with quotation marks.
 #' @param Age_band_size The size of the Age band to use. Defaults to 5; will take values 2,5,10,20.
-#' @return A dataframe with a new column `Ageband`
+#' @return A dataframe containing a new column `Ageband` which has factor levels defined.
 #' @examples
 #' \dontrun{
 #' library(SangerTools)
@@ -39,8 +39,12 @@ age_bandizer_2 <- function(df, Age_col, Age_band_size = 5) {
       x = df[, Age_col],
       breaks = c(seq(0, 100, by = Age_band_size), Inf),
       labels = age_band_labels,
-      right = FALSE
-    )
+      right = FALSE)
+
+
     return(df)
   }
 }
+
+
+
