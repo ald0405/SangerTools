@@ -1,16 +1,11 @@
 #' @title  Plot Counts of Categorical Variables
 #' @description
 #' Create a ggplot2 column chart of categorical variables with labels, in ascending order.
-#' A `theme_sanger()` will be applied, y-axis labels will have a comma for every third integer value.
+#' The plot will be customised using the provided theme \code{\link{theme_sanger}}, y-axis labels will have a comma for every third integer value.
 #' If the column provided to `grouping_var` has more than approximately 5 values, you may need to consider
-#' rotating x axis labels using
+#' rotating x axis labels using \code{\link[ggplot2]{theme}}
 #'
-#' `+ theme(axis.text.x = element_text(angle = , vjust = , hjust= ))`
-#'
-#'
-#' A comprehensive explanation of ggplot2 customisation is available here
-#'
-#' https://ggplot2.tidyverse.org/reference/theme.html
+#' A comprehensive explanation of ggplot2 customisation is available \href{https://ggplot2.tidyverse.org/reference/}{here}
 #' @param df A dataframe with categorical variables
 #' @param grouping_var a categorical variable by which to group the count by
 #' @return a ggplot2 object

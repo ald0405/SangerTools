@@ -21,11 +21,11 @@ cohort_processing(
 
 \item{path}{A file path to which the CSV files will be written}
 
-\item{prefix}{File name prefix, default is "DSCRO" See more here: https://digital.nhs.uk/about-nhs-digital/our-work/keeping-patient-data-safe/gdpr/gdpr-register/data-services-for-commissioners-regional-offices-dscro-gdpr-information/data-services-for-commissioners-regional-offices-dscro-ambulance}
+\item{prefix}{File name prefix, default is "DSCRO" See more here: \href{ https://digital.nhs.uk/about-nhs-digital/our-work/keeping-patient-data-safe/gdpr/gdpr-register/data-services-for-commissioners-regional-offices-dscro-gdpr-information/data-services-for-commissioners-regional-offices-dscro-ambulance}{NHS DSCRO}}
 
 \item{com_code}{Commissioner Code, default is "11M"; Gloucestershire.}
 
-\item{date_format}{A date format passed internally to `format(Sys.Date())`; will form part of file name to denote date of generation.}
+\item{date_format}{A date format passed internally to `format(Sys.Date())`; will form part of file name to denote date of generation. You can read more about date formatting in R \href{https://r-lang.com/r-date-format/}{from R lang}}
 
 \item{suffix}{A file name suffix, default is "_REID_V01", To be left as blank use "", without spaces.}
 }

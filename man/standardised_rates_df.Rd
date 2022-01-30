@@ -14,7 +14,7 @@ standardised_rates_df(
 )
 }
 \arguments{
-\item{df}{a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.}
+\item{df}{a tidy data frame in standard Master Patient Index format ie SangerTools::PopHealthData.}
 
 \item{Split_by}{A column name within df for which the standardised rates will be calculated for.}
 
@@ -30,9 +30,12 @@ standardised_rates_df(
 A tibble containing standardised Prevalence Rates by specified group.
 }
 \description{
-This calculation is performed
-for all unique values in the column passed to `split_by`. This is a more generalised function
-and will pair well with `excel_clip()` and `df_to_sql()`.
+Standardisation will be  performed
+for all unique values in the column passed to `split_by`. If input data frame does not contain age bands
+or age bands are not of class factor, it is recommended to use \code{\link{age_bandizer}} or \code{\link{age_bandizer_2}}.
+After the function has run, the output can be copied using \code{\link{excel_clip}}  or  written to a database using \code{\link{df_to_sql}}.
+Alternatively, if you are interested in seeing the effects of age confounding; consider joining the outputs of this function with the output from \code{\link{crude_rates}}
+using a \code{\link[dplyr]{left_join}}
 }
 \examples{
 library(SangerTools)

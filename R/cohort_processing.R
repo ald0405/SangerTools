@@ -7,9 +7,10 @@
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData.
 #' @param Split_by A column within df that will be used to split the patients and will also appear in the file name. Ideally should be a health organisation code such as GP Practice Code or Hospital Trust Code. Should only have alpha-numeric values
 #' @param path A file path to which the CSV files will be written
-#' @param prefix File name prefix, default is "DSCRO" See more here: https://digital.nhs.uk/about-nhs-digital/our-work/keeping-patient-data-safe/gdpr/gdpr-register/data-services-for-commissioners-regional-offices-dscro-gdpr-information/data-services-for-commissioners-regional-offices-dscro-ambulance
+#' @param prefix File name prefix, default is "DSCRO" See more here: \href{ https://digital.nhs.uk/about-nhs-digital/our-work/keeping-patient-data-safe/gdpr/gdpr-register/data-services-for-commissioners-regional-offices-dscro-gdpr-information/data-services-for-commissioners-regional-offices-dscro-ambulance}{NHS DSCRO}
+#'
 #' @param com_code Commissioner Code, default is "11M"; Gloucestershire.
-#' @param date_format A date format passed internally to `format(Sys.Date())`; will form part of file name to denote date of generation.
+#' @param date_format A date format passed internally to `format(Sys.Date())`; will form part of file name to denote date of generation. You can read more about date formatting in R \href{https://r-lang.com/r-date-format/}{from R lang}
 #' @param suffix A file name suffix, default is "_REID_V01", To be left as blank use "", without spaces.
 #' @return n number of CSV files written to the location specified by path argument.
 #' @importFrom readr write_csv

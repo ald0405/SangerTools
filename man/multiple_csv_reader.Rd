@@ -2,13 +2,14 @@
 % Please edit documentation in R/multiple_csv_reader.R
 \name{multiple_csv_reader}
 \alias{multiple_csv_reader}
-\title{Read Multiple CSV files into R
-This function reads multiple CSVs in a directory must be same structure.}
+\title{Read Multiple CSV files into R}
 \usage{
-multiple_csv_reader(file_path, rows_to_skip = 0, col_names = TRUE)
+multiple_csv_reader(file_path, sheet = 1, rows_to_skip = 0, col_names = TRUE)
 }
 \arguments{
 \item{file_path}{The Directory in which the files are located}
+
+\item{sheet}{Sheet to read. Either a string (the name of a sheet), or an integer (the position of the sheet). Defaults to the first sheet}
 
 \item{rows_to_skip}{The number of rows from the top to be excluded}
 
@@ -18,8 +19,18 @@ multiple_csv_reader(file_path, rows_to_skip = 0, col_names = TRUE)
 a data frame object full of file paths
 }
 \description{
-Read Multiple CSV files into R
 This function reads multiple CSVs in a directory must be same structure.
+This function reads multiple excel files into R after which all files are aggregated into  a single data frame.
+
+
+There are assumptions about they underlying files:
+\itemize{
+  \item All files must have column names for each column (The function will fail without this; later versions will amend this)
+  \item All files have the same number of columns
+  \item All files have the same column names
+  \item All files should have data starting from the same row number
+  \item All relevant data is stored in the same sheet in each of the files
+}
 }
 \examples{
 library(SangerTools)
