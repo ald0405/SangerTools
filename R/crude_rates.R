@@ -17,7 +17,7 @@
 #' @export
 
 crude_rates <- function(df, Condition, ...) {
-  if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
+  if (is_tibble(df) == FALSE & is.data.frame(df) == FALSE) {
     stop("Check Input df: Non Tibble or DataFrame Object Detected")
   } else {
     group_var <- enquos(...)
