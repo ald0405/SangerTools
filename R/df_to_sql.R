@@ -34,7 +34,7 @@ df_to_sql <- function(df,
                       database,
                       sql_table_name,
                       ...) {
-  if (is_tibble(df) == FALSE | is.data.frame(df) == FALSE) {
+  if (is_tibble(df) == FALSE & is.data.frame(df) == FALSE) {
     stop("Check Input df: Non Tibble or DataFrame Object Detected")
   } else {
     # Establish Connection[Will only work based on OS Login Credentials]
