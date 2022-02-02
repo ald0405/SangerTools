@@ -19,7 +19,6 @@
 #' @importFrom ggplot2 scale_y_continuous
 #' @importFrom stats reorder
 #' @importFrom scales comma
-#' @importFrom ggplot2 scale_fill_manual
 #' @importFrom magrittr %>%
 #' @examples
 #' library(SangerTools)
@@ -48,11 +47,6 @@ categorical_col_chart <- function(df, grouping_var) {
     geom_label(aes(label = paste0(round((proportion * 100), 2), "%"), size = 12),
       show.legend = FALSE, nudge_y = -0.2
     ) +
-    scale_fill_manual(values = c(
-      "#9880BB", "#0061BA", "#71B72B", "#3BBCD9",
-      "#223873", "#D585BA", "#007761", "#4D8076",
-      "#00C9A7", "#4A4453", "#C27767", "#D5CABD"
-    )) +
     scale_y_continuous(labels = comma) +
     theme_sanger()
   return(p1)
