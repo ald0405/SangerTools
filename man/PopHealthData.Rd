@@ -13,7 +13,7 @@ A small dataset with 1000 observations (rows) and 8 columns, as described hereun
   \item{AgeBand}{The age of the patient when they came into contact with the service}
   \item{IMD_Decile}{The decile of indices of multiple deprivation: \url{https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019}}
   \item{Ethnicity}{The identifiable ethnicity of the patient}
-  \item{Locality}{The region of the patient lives - sampled from Gloucestershire Clinical Commissioning Group}
+  \item{Locality}{The region where the patient lives - sampled from Gloucestershire Clinical Commissioning Group}
   \item{PrimaryCareNetwork}{The primary care network of the patient}
  }
 }
