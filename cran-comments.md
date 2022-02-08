@@ -22,11 +22,5 @@
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
 
-Used devtools::spell_check() to check spellings and it shows potential list of spelling errors. These are all acceptable GB spellings of the words:
-
-- Analytical
-- NHS
-- analytics
-
 ## Downstream dependencies
 There are currently no downstream dependencies for this package to my knowledge.
