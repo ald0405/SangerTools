@@ -39,8 +39,10 @@ using a \code{\link[dplyr]{left_join}}
 }
 \examples{
 library(SangerTools)
+health_data <- SangerTools::age_bandizer(df = SangerTools::master_patient_index,
+                                         Age_col=Age)
 df_rates <- standardised_rates_df(
-  df = PopHealthData,
+  df = health_data,
   Split_by = Locality,
   Condition = Diabetes,
   Population_Standard = NULL,

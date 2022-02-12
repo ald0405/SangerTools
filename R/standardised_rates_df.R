@@ -16,8 +16,10 @@
 #' @importFrom dplyr ungroup count summarise group_by n mutate left_join pull rename filter enquos pull
 #' @examples
 #' library(SangerTools)
+#' health_data <- SangerTools::age_bandizer(df = SangerTools::master_patient_index,
+#'                                          Age_col=Age)
 #' df_rates <- standardised_rates_df(
-#'   df = PopHealthData,
+#'   df = health_data,
 #'   Split_by = Locality,
 #'   Condition = Diabetes,
 #'   Population_Standard = NULL,
