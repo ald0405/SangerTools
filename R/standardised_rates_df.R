@@ -22,7 +22,7 @@
 #'   Condition = Diabetes,
 #'   Population_Standard = NULL,
 #'   Granular = TRUE,
-#'   AgeBand
+#'   Ageband
 #' )
 #' print(df_rates)
 #' @export

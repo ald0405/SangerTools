@@ -31,32 +31,54 @@ library(scales)
 
 # Welcome to the SangerTools package
 
-This package has been created to provide you convenient functions for working with population health data and is specifically aimed at healthcare providers and services that focus on population health management. 
+This package has been created to provide convenient functions for working with population health data.  It is  specifically aimed at healthcare providers and services that focus on population health management. 
 
-In the next sections we will take you through how you use the tool. This tool will expand over time, as we already have a million ideas of how to adapt and add to the tool. 
+This project is centered around the Master Patient Index format. Where each row is a patient and each column is an observation of that patient
+
+In the next sections we will take you through how you use the tool. We highly encourage users to contact us for ideas and collaboration. 
 
 ## Loading in the PopHealthData
 
-To load in the PopHealthData attached to the SangerTools package. This is extremely simple, as the data is attached to the package. To load the data into R follow these steps:
+To load in the Master Patient Index attached to the SangerTools package  follow these steps:
 
 ```{r load_data}
-health_data <- SangerTools::PopHealthData
+
+health_data <- SangerTools::master_patient_index
 glimpse(health_data)
 ```
 
 The data contains:
 
-- Sex of the patient (Sex)
-- Whether the patient is a smoker (Smoker)
-- Indication by binary flag that the patient is diabetic (Diabetes)
-- Age band of the patient at the time of presentation to the service (AgeBand)
-- IMD decile - this is the indices of multiple deprivation and looks at the level of deprivation, by geography, for that patient (IMD_Decile)
-- Ethnicity of the patient is captured as a nominal representation (Ethnicity)
-- Locality - the locality the patient resides in (Locality)
-- Primary Care Network is the network associated to the patients clinical commissioning group (CCG)
-
+- **PseudoNHSNumber** - A Pseudonymised NHS Patient Identifier
+- **Sex** - The identifiable sex of the patient
+- **Smoker** - Health Condition Flag: 1 denotes if the patient is a smoker
+- **Diabetes** - Health Condition Flag: 1 denotes if the patient has diabetes
+- **Dementia** - Health Condition Flag: 1 denotes if the patient has dementia
+- **Obesity** - Health Condition Flag: 1 denotes if the patient is Obese
+- **Age** - Age of the patient
+- **IMD_Decile** - The decile of indices of multiple deprivation
+- **Ethnicity** - The identifiable ethnicity of the patient}
+- **Locality** - The region where the patient lives - sampled from Gloucestershire Clinical Commissioning Group (GCCG)
+- **PrimaryCareNetwork** - The network of General Practioners that the patient is registered with - sampled from (GCCG)
 
 With the data we can start to work with the function in the package.
+
+
+## Age bands 
+
+It is common practice to transform continuous age values into a smaller set of categories 
+
+
+There are two functions in the package for doing this. `age_bandizer` Uses a tidyverse philosophy of function creation with Non-Standard Evaluation. It will produce a new column with 5 year age bands as a factor. 
+
+`age_bandizer2` uses Standard Evaluation and currently takes in puts of band size 2,5,10 & 20. 
+
+```{r ageabands}
+health_data <- SangerTools::age_bandizer(df = health_data,Age_col = Age)
+#health_data <- SangerTools::age_bandizer_2(df = health_data,Age_col = "Age",Age_band_size = 2)
+
+
+```
 
 ## Generating a categorical column chart easily
 
@@ -66,42 +88,104 @@ The package makes it very simple to create a categorical column chart. This will
 # Group by Ethnicity
 health_data %>% 
   dplyr::filter(Diabetes==1) %>% 
-  SangerTools::categorical_col_chart(., Ethnicity)
-
-# Group by Age Band
-health_data %>% 
-  dplyr::filter(Smoker==1) %>% 
-  SangerTools::categorical_col_chart(AgeBand) + labs(x="Ethnicity", y="Patient Number")
+  SangerTools::categorical_col_chart(., Ethnicity)+
+  scale_fill_sanger()+ 
+  labs(title = "Diabetic Patients by Ethnicity",
+       subtitle = "Nearly All Diabetics are White",
+       x = NULL, 
+       y = "Number of Patients") + 
+  coord_flip() 
 
 # Group by Sex
 health_data %>% 
   dplyr::filter(Diabetes==1) %>% 
-  SangerTools::categorical_col_chart(Sex) + labs(x="Gender")
+  SangerTools::categorical_col_chart(Sex) + 
+  scale_fill_sanger()+
+  labs(title = "Diabetic Patients by Gender",
+       x = NULL, 
+       y = "Number of Patients")  
 ```
 
 It really is that simple to generate very nice looking proportional charts. 
 
-## Crude prevalence rate outputs
+## Crude Prevalence 
 
-To obtain the crude prevalance rate, this can be achieved below:
+
+Here we will look at the crude rate of diabetes 
+To obtain the crude prevalence rate, this can be achieved below:
 
 ```{r crude_rates}
  crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
- # Another way
- print(crude_prevalence)
+crude_prevalence
 
 ```
 
+## Age Standardised Rates
+
+Let's revisit the example above. Diabetes is highly confounded by age. Most diabetics will be diagnosed after the age of 40.
+
+
+```{r ASR}
+
+asr_prevalence <- SangerTools::standardised_rates_df(df = health_data,
+                                   Split_by = Locality,
+                                   Condition = Diabetes, 
+                                   Population_Standard = NULL,
+                                   Granular = FALSE,
+                                   Ageband )
+asr_prevalence
+```
+
+Given that each of the Localities had the population structure of the county as whole; we can see slight differences to the crude prevalence rates.
+
+## Age Standardised Rates with User Defined Population Structure
+
+
+We will use another dataset attached to the package; the UK population from the year 2018. 
+This is broken down by 5 year age bands. 
+For a user define population structure to integrate with `standardised_rates_df` ensure to change the name of the population column to 
+`Pop_Weight`
+
+```{r UK_pop}
+
+uk_pop18<- SangerTools::uk_pop_standard
+
+names(uk_pop18) <- c("Pop_Weight","Ageband")
+glimpse(uk_pop18)
+
+```
+
+```{r ASR2}
+
+
+
+SangerTools::standardised_rates_df(df = health_data,
+                                   Split_by = Locality,
+                                   Condition = Diabetes, 
+                                   Population_Standard = uk_pop18,
+                                   Granular = FALSE,
+                                   Ageband )
+```
+## Combining Results
+
+To view both crude and standardised rates we can use dplyr::`left_join`
+
+```{r}
+combined_rates <- crude_prevalence %>% 
+  dplyr::left_join(asr_prevalence, by = c("Locality"))
+
+combined_rates
+
+```
 Other functionality added into the package would be to use the multiple CSV reader and clipboard functions.
 
 ## Excel Clipboard function
 
-This essentially copies a data frame to the clipboard for you for then pasting into Excel sheets, or csvs, or raw text.
+This copies a data frame to the clipboard for you for then pasting into Excel sheets, or csvs, or raw text.
 
-```{r copy_to_clipboard}
-#health_data %>%
- # slice(1:10) %>%
-  #SangerTools::excel_clip(row.names = FALSE, col.names = TRUE) #Include column names
+```{r copy_to_clipboard,eval=FALSE}
+
+SangerTools::excel_clip(combined_rates)
 
 ```
 
@@ -118,12 +202,40 @@ file_path = 'my_file_path_where_csvs_are_stored'
 if (length(SangerTools::multiple_csv_reader(file_path))==0){
   message("This won't work without changing the variable input to a local file path with CSVs in")
 }
+```
 
+`multiple_excel_reader` is the equivalent for excel files; however please read function documentation page as both functions have a strict
+set of requirements for execute. 
+
+
+## Splitting Dataframes and Saving
+
+`split_and_save` is a quick way to split a dataframe on a specified column into subsequent dataframes after which each of dataframes is dynamically written to a location choice
+
+```{r split_and_save,eval=FALSE}
+SangerTools::split_and_save(
+ df = health_data,
+ Split_by = "Locality",
+ file_path = "Inputs/",
+ prefix = NULL
+)
+```
+
+## Results to SQL 
+
+Write your results to SQL Server ensuring that the table name appears as expected. 
+
+This function makes a number of assumptions and is limited in scope; please read documentation.
+
+```{r df_to_sql,eval = FALSE}
+SangerTools::df_to_sql(df = combined_rates,
+                       driver = "SQL SERVER",
+                       server = "Org-sql-db",
+                       database = "MyReports",
+                       sql_table_name = "Diabetes_Prevalence")
 
 
 ```
-
-This will need to link to a series of CSV files. 
 
 
 
@@ -146,5 +258,5 @@ show_extended_palette()
 
 ## Closing 
 
-More functions are being added to this tool and a new version of the file will be released on CRAN very soon. Keep an eye out on the associated [GitHub](https://github.com/ald0405/SangerTools) for updates, and make sure to pull down the most recent version from CRAN. 
+More functions are being added to this tool and a new version of the file will be released on CRAN very soon. Keep an eye out on the associated [GitHub](https://github.com/ald0405/SangerTools) for updates.
 

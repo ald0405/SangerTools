@@ -35,7 +35,7 @@ library(odbc)
 library(DBI)
 health_data <- SangerTools::PopHealthData
 df_to_sql(
-  dataframe = health_data,
+  df = health_data,
   driver = "SQL SERVER",
   database = "DATABASE",
   sql_table_name = "New Table Name"
