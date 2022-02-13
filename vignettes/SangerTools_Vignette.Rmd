@@ -2,7 +2,7 @@
 title: "SangerTools Vignette"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{SangerTools_Vignette}
+  %\VignetteIndexEntry{SangerTools Vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -13,12 +13,10 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.height= 5, 
-  fig.width=7
+  fig.height = 5, 
+  fig.width = 8
 )
 ```
-
-
 
 
 ```{r setup, echo=FALSE, include=FALSE}
@@ -26,6 +24,7 @@ library(SangerTools)
 library(dplyr)
 library(ggplot2)
 library(scales)
+library(kableExtra)
 ```
 
 
@@ -33,20 +32,31 @@ library(scales)
 
 This package has been created to provide convenient functions for working with population health data.  It is  specifically aimed at healthcare providers and services that focus on population health management. 
 
-This project is centered around the Master Patient Index format. Where each row is a patient and each column is an observation of that patient
+Many of the functions are centered around the Master Patient Index format. Where each row is a patient and each column is an observation of that patient.
 
-In the next sections we will take you through how you use the tool. We highly encourage users to contact us for ideas and collaboration. 
+In the next sections we will take you through how you use the tool. 
+***
+***
 
-## Loading in the PopHealthData
+## Loading in Health Data
 
 To load in the Master Patient Index attached to the SangerTools package  follow these steps:
 
 ```{r load_data}
 
 health_data <- SangerTools::master_patient_index
-glimpse(health_data)
+
 ```
 
+```{r load_data_print, echo = FALSE}
+health_data %>% 
+  head() %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped",
+                                      "hover",
+                                      "condensed",
+                                      "responsive"))
+```
 The data contains:
 
 - **PseudoNHSNumber** - A Pseudonymised NHS Patient Identifier
@@ -63,22 +73,40 @@ The data contains:
 
 With the data we can start to work with the function in the package.
 
-
+***
 ## Age bands 
 
-It is common practice to transform continuous age values into a smaller set of categories 
 
 
-There are two functions in the package for doing this. `age_bandizer` Uses a tidyverse philosophy of function creation with Non-Standard Evaluation. It will produce a new column with 5 year age bands as a factor. 
+It is common practice to transform continuous age values into a smaller set of categories.  
+
+
+There are two functions in the package for doing this.
+
+* `age_bandizer` 
+* `age_bandizer2` 
+
+`age_bandizer` Uses a tidyverse philosophy of function creation with Non-Standard Evaluation. It will produce a new column with 5 year age bands as a factor. 
 
 `age_bandizer2` uses Standard Evaluation and currently takes in puts of band size 2,5,10 & 20. 
 
-```{r ageabands}
-health_data <- SangerTools::age_bandizer(df = health_data,Age_col = Age)
+```{r agebands}
+health_data <- SangerTools::age_bandizer(df = health_data,
+                                         Age_col = Age)
 #health_data <- SangerTools::age_bandizer_2(df = health_data,Age_col = "Age",Age_band_size = 2)
-
-
 ```
+
+```{r agebands_print, echo = FALSE}
+health_data %>% 
+  select(Age,Ageband) %>%
+  head() %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
+```
+
 
 ## Generating a categorical column chart easily
 
@@ -116,7 +144,11 @@ To obtain the crude prevalence rate, this can be achieved below:
 
 ```{r crude_rates}
  crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
-crude_prevalence
+  kableExtra::kbl(crude_prevalence) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
 
 ```
 
@@ -133,10 +165,20 @@ asr_prevalence <- SangerTools::standardised_rates_df(df = health_data,
                                    Population_Standard = NULL,
                                    Granular = FALSE,
                                    Ageband )
-asr_prevalence
 ```
 
-Given that each of the Localities had the population structure of the county as whole; we can see slight differences to the crude prevalence rates.
+```{r asr_print,echo=FALSE}
+
+  kableExtra::kbl(asr_prevalence) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
+
+```
+
+
+Given that each of the Localities now has the population structure of the county as whole; we can see slight differences to the crude prevalence rates.
 
 ## Age Standardised Rates with User Defined Population Structure
 
@@ -146,37 +188,66 @@ This is broken down by 5 year age bands.
 For a user define population structure to integrate with `standardised_rates_df` ensure to change the name of the population column to 
 `Pop_Weight`
 
+
+## Load 2018 UK Population Structure 
+
 ```{r UK_pop}
 
 uk_pop18<- SangerTools::uk_pop_standard
 
 names(uk_pop18) <- c("Pop_Weight","Ageband")
-glimpse(uk_pop18)
+
+```
+```{r UK_pop_print,echo = FALSE}
+uk_pop18 %>% 
+  head() %>% 
+  kableExtra::kbl(format.args = list(big.mark = ",")) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
 
 ```
 
+## UK Age Standardised Diabetes Prevalence 
+
 ```{r ASR2}
-
-
-
-SangerTools::standardised_rates_df(df = health_data,
+asr_uk <- SangerTools::standardised_rates_df(df = health_data,
                                    Split_by = Locality,
                                    Condition = Diabetes, 
                                    Population_Standard = uk_pop18,
                                    Granular = FALSE,
                                    Ageband )
 ```
+
+```{r ASR2_print,echo = FALSE}
+asr_uk %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
+```
 ## Combining Results
 
 To view both crude and standardised rates we can use dplyr::`left_join`
 
-```{r}
+```{r combined_rates}
 combined_rates <- crude_prevalence %>% 
   dplyr::left_join(asr_prevalence, by = c("Locality"))
 
-combined_rates
 
 ```
+```{r combined_rates_print, echo=FALSE}
+combined_rates %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                      "hover", 
+                                      "condensed", 
+                                      "responsive"))
+
+```
+
 Other functionality added into the package would be to use the multiple CSV reader and clipboard functions.
 
 ## Excel Clipboard function
@@ -253,6 +324,8 @@ This is also an anonymous function; it will show an extended colour palette
 ```{r}
 show_extended_palette()
 ```
+
+
 
 
 

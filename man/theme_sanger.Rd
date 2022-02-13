@@ -23,5 +23,6 @@ categorical_col_chart(SangerTools::PopHealthData, Locality) +
   theme_sanger()+
   labs(title = "Categorical Column Chart",
   x = "Locality",
-  y = "Number of Patients")
+  y = "Number of Patients")+
+  scale_fill_sanger()
 }
