@@ -1,4 +1,4 @@
-#' Create age bands from a numerical  column
+#' @title Create age bands from a numerical  column
 #' @description
 #' An alternative age banding function that allows users greater flexibility for defining band size.
 #' This function utilises Base R standard evaluation. The function currently supports band size of 2, 5, 10 & 20.
