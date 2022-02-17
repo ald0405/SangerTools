@@ -114,9 +114,11 @@ The package makes it very simple to create a categorical column chart. This will
 
 ```{r categorical_column_chart}
 # Group by Ethnicity
-health_data %>% 
-  dplyr::filter(Diabetes==1) %>% 
-  SangerTools::categorical_col_chart(., Ethnicity)+
+diabetes_df <- health_data %>% 
+  dplyr::filter(Diabetes==1)
+  
+  SangerTools::categorical_col_chart(df = diabetes_df,
+                                     grouping_var = Ethnicity)+
   scale_fill_sanger()+ 
   labs(title = "Diabetic Patients by Ethnicity",
        subtitle = "Nearly All Diabetics are White",
@@ -143,7 +145,11 @@ Here we will look at the crude rate of diabetes
 To obtain the crude prevalence rate, this can be achieved below:
 
 ```{r crude_rates}
- crude_prevalence <- SangerTools::crude_rates(health_data, Diabetes, Locality)
+ crude_prevalence <- SangerTools::crude_rates(df = health_data,
+                                              Condition =  Diabetes, 
+                                              Locality)
+```
+```{r crude_rates_print, echo=FALSE }
   kableExtra::kbl(crude_prevalence) %>%
   kableExtra::kable_styling(bootstrap_options = c("striped", 
                                       "hover", 
@@ -303,7 +309,8 @@ SangerTools::df_to_sql(df = combined_rates,
                        driver = "SQL SERVER",
                        server = "Org-sql-db",
                        database = "MyReports",
-                       sql_table_name = "Diabetes_Prevalence")
+                       sql_table_name = "Diabetes_Prevalence",
+                       overwrite = FALSE)
 
 
 ```

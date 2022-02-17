@@ -10,6 +10,7 @@
 #' @param server The unique name of your database server; must be passed in quotation.
 #' @param database The name of the database to which you will write `df`; must be passed in quotation.
 #' @param sql_table_name The name that `df` will be referred to in SQL database; must be passed in quotation.
+#' @param overwrite If there is a SQL table with the same name whether it will be overwritten; defaults to FALSE.
 #' @param ... Function forwarding for additional functionality.
 #' @return A message confirming that a new  table has been created in a SQL `database`.
 #' @importFrom DBI dbConnect Id dbWriteTable
@@ -24,7 +25,8 @@
 #'   df = health_data,
 #'   driver = "SQL SERVER",
 #'   database = "DATABASE",
-#'   sql_table_name = "New Table Name"
+#'   sql_table_name = "New Table Name",
+#'   overwrite = FALSE
 #' )
 #' }
 #' @export
@@ -33,6 +35,7 @@ df_to_sql <- function(df,
                       server,
                       database,
                       sql_table_name,
+                      overwrite = FALSE,
                       ...) {
   if (is_tibble(df) == FALSE & is.data.frame(df) == FALSE) {
     stop("Check Input df: Non Tibble or DataFrame Object Detected")
@@ -55,7 +58,7 @@ df_to_sql <- function(df,
       conn = con,
       name = table_name,
       value = df,
-      overwrite = TRUE,
+      overwrite = overwrite,
       row.names = FALSE
     )
     message(
