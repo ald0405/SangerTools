@@ -69,7 +69,7 @@ library(SangerTools)
 
 ## Learning how to use the package
 
-To learn how to use the package, check out the [vignette](https://rpubs.com/StatsGary/851661) on RPubs.
+To learn how to use the package, check out the [vignette](https://rpubs.com/thesiff/sangertools2) on RPubs.
 
 ## Contributors and Authors
 [![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant working with Clinical Commissioning Groups
