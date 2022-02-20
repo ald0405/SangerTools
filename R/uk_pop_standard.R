@@ -6,5 +6,5 @@
 #'   \item{UK_Population}{dbl Year price was recorded}
 #'   \item{Ageband}{5 Year age band for population}
 #'   }
-#' @source \url{https://www.pnas.org/content/114/7/1512/tab-figures-data}
+#' @source \url{https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates}
 "uk_pop_standard"

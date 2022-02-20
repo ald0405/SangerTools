@@ -93,7 +93,10 @@ There are two functions in the package for doing this.
 ```{r agebands}
 health_data <- SangerTools::age_bandizer(df = health_data,
                                          Age_col = Age)
-#health_data <- SangerTools::age_bandizer_2(df = health_data,Age_col = "Age",Age_band_size = 2)
+
+health_data <- SangerTools::age_bandizer_2(df = health_data,
+                                           Age_col = "Age",
+                                           Age_band_size = 5)
 ```
 
 ```{r agebands_print, echo = FALSE}

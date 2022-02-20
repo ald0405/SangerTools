@@ -12,7 +12,7 @@ A tibble with 29 rows and 2 variables:
   }
 }
 \source{
-\url{https://www.pnas.org/content/114/7/1512/tab-figures-data}
+\url{https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates}
 }
 \usage{
 uk_pop_standard

@@ -22,11 +22,11 @@
 #' @export
 #'
 age_bandizer_2 <- function(df, Age_col, Age_band_size = 5) {
-  if (!is.numeric(df[, Age_col]) | sum(is.na(df[, Age_col])) > 0) {
+#  if (!is.numeric(df[, Age_col]) | sum(is.na(df[, Age_col])) > 0) {
 
-      stop("Check Input Column Is Numeric & Does Not Contain NAs")
+#      stop("Check Input Column Is Numeric & Does Not Contain NAs")
 
-  } else {
+#  } else {
     age_band_labels <- c(
       paste(seq(0, 95, by = Age_band_size),
         seq(0 + Age_band_size - 1, 100 - 1, by = Age_band_size),
@@ -36,14 +36,14 @@ age_bandizer_2 <- function(df, Age_col, Age_band_size = 5) {
     )
 
     df$Ageband <- cut(
-      x = df[, Age_col],
+      x = unlist(df[,Age_col]),
       breaks = c(seq(0, 100, by = Age_band_size), Inf),
       labels = age_band_labels,
       right = FALSE)
 
 
     return(df)
-  }
+#  }
 }
 
 
