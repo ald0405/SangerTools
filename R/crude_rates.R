@@ -1,4 +1,7 @@
+#' @title
 #' Crude Prevalence Calculator
+#' @description
+#' Calculate the crude prevalence of a health condition from a Master Patient Index like dataset
 #' @param df a tidy dataframe in standard Master Patient Index format ie SangerTools::PopHealthData
 #' @param Condition A Health condition flag denoted by 1 & 0; where 1 denotes the patient being positive for the health condition
 #' @param ... Variables used to standardise by; Must always have Ageband, additional variables are optional

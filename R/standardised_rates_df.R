@@ -1,4 +1,5 @@
-#' Standardised Prevalence Rates in Tibble format.
+#' @title
+#' Standardised Prevalence Rates.
 #' @description
 #' Standardisation will be  performed
 #' for all unique values in the column passed to `split_by`. If input data frame does not contain age bands

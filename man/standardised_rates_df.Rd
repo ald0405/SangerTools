@@ -2,7 +2,7 @@
 % Please edit documentation in R/standardised_rates_df.R
 \name{standardised_rates_df}
 \alias{standardised_rates_df}
-\title{Standardised Prevalence Rates in Tibble format.}
+\title{Standardised Prevalence Rates.}
 \usage{
 standardised_rates_df(
   df,

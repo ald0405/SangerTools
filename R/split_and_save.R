@@ -1,3 +1,4 @@
+#' @title
 #' Split & Save
 #' @description
 #' A simpler alternative to  \code{\link{cohort_processing}}. Will split a data frame

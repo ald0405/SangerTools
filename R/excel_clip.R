@@ -1,4 +1,5 @@
-#' Copy Dataframe or Tibble to Clipboard
+#' @title
+#' Dataframe or Tibble to Clipboard
 #' @description
 #' This function copies a data frame or tibble to your clipboard in a format that allows
 #' for a simple paste into excel whilst maintaining column and row structure.

@@ -17,7 +17,7 @@ crude_rates(df, Condition, ...)
 a tibble with Crude Prevalence Rates(Rate per 1,000) for each value included in ...
 }
 \description{
-Crude Prevalence Calculator
+Calculate the crude prevalence of a health condition from a Master Patient Index like dataset
 }
 \examples{
 library(SangerTools)

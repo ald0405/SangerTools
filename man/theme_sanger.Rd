@@ -2,8 +2,7 @@
 % Please edit documentation in R/theme_sanger.R
 \name{theme_sanger}
 \alias{theme_sanger}
-\title{Customised ggplot2 Theme
-A customised ggplot2 theme for the SangerTools package}
+\title{Customised ggplot2 Theme}
 \usage{
 theme_sanger()
 }
@@ -11,7 +10,6 @@ theme_sanger()
 A customised ggplot2 plot
 }
 \description{
-Customised ggplot2 Theme
 A customised ggplot2 theme for the SangerTools package
 }
 \examples{

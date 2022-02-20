@@ -1,4 +1,5 @@
-#' Display Brand Colour Palette
+#' @title Brand Colour Palette
+#' @description
 #' Displays a brand colour palette for showing the hex codes associated with brand
 #' @return a Base R plot object
 #' @importFrom scales show_col

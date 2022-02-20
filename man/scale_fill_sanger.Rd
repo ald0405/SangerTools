@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_fill_sanger.R
 \name{scale_fill_sanger}
 \alias{scale_fill_sanger}
-\title{Apply branded discrete colour scale}
+\title{Branded discrete colour scale}
 \usage{
 scale_fill_sanger()
 }

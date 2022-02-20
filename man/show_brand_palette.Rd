@@ -2,8 +2,7 @@
 % Please edit documentation in R/show_brand_palette.R
 \name{show_brand_palette}
 \alias{show_brand_palette}
-\title{Display Brand Colour Palette
-Displays a brand colour palette for showing the hex codes associated with brand}
+\title{Brand Colour Palette}
 \usage{
 show_brand_palette()
 }
@@ -11,7 +10,6 @@ show_brand_palette()
 a Base R plot object
 }
 \description{
-Display Brand Colour Palette
 Displays a brand colour palette for showing the hex codes associated with brand
 }
 \examples{

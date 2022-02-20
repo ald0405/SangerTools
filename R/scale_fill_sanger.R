@@ -1,4 +1,5 @@
-#' Apply branded discrete colour scale
+#' @title
+#' Branded discrete colour scale
 #' @description
 #' This anonymous function allows you to apply the Sanger Theme colours to your ggplot2 plot
 #' @return A custom colour filled ggplot2 plot

@@ -2,7 +2,7 @@
 % Please edit documentation in R/excel_clip.R
 \name{excel_clip}
 \alias{excel_clip}
-\title{Copy Dataframe or Tibble to Clipboard}
+\title{Dataframe or Tibble to Clipboard}
 \usage{
 excel_clip(df, row_names = FALSE, col_names = TRUE, ...)
 }

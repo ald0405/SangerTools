@@ -1,4 +1,6 @@
+#' @title
 #' Customised ggplot2 Theme
+#' @description
 #' A customised ggplot2 theme for the SangerTools package
 #' @return A customised ggplot2 plot
 #' @importFrom ggthemes theme_fivethirtyeight
