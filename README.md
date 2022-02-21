@@ -11,8 +11,6 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/ald0405/SangerTools/blob/master/LICENSE)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/ald0405/SangerTools?branch=master&svg=true)](https://ci.appveyor.com/project/ald0405/SangerTools)
-[![Lifecycle:
-
 <!-- badges: end -
 
 <!-- badges: end -->
