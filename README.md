@@ -70,7 +70,7 @@ library(SangerTools)
 To learn how to use the package, check out the [vignette](https://rpubs.com/thesiff/sangertools2) on RPubs.
 
 ## Contributors and Authors
-[![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant working with Clinical Commissioning Groups
+[![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant & NHS-R Fellow
 
 [![Gary](https://i.stack.imgur.com/gVE0j.png) Gary](https://www.linkedin.com/in/ghutson/) - Head of Machine Learning and Senior NHS-R Fellow
 
