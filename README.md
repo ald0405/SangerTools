@@ -65,6 +65,7 @@ library(SangerTools)
 
 ```
 
+
 ## Learning how to use the package
 
 To learn how to use the package, check out the [vignette](https://rpubs.com/thesiff/sangertools2) on RPubs.
