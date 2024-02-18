@@ -3,7 +3,6 @@
 <p><a href="https://hutsons-hacks.info/"><img src = "man/figures/sangertoolshex.png" width = "125px" height = "150px" align="right"></a></p>
 
  <!-- badges: start -->
-  [![R-CMD-check](https://github.com/ald0405/SangerTools/workflows/R-CMD-check/badge.svg)](https://github.com/ald0405/SangerTools/actions)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ald0405/SangerTools)
 ![GitHub Repo stars](https://img.shields.io/github/stars/ald0405/SangerTools?label=SangerToolsR%20Stars)
  [![CRAN status](https://www.r-pkg.org/badges/version/SangerTools)](https://CRAN.R-project.org/package=SangerTools) 
