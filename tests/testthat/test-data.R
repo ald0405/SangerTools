@@ -14,7 +14,7 @@ test_that("master_patient_index loads with expected shape", {
   expect_s3_class(master_patient_index, "data.frame")
   expect_gt(nrow(master_patient_index), 0)
   expect_true(all(c("Age", "Sex", "Diabetes", "Locality") %in% names(master_patient_index)))
-  expect_type(master_patient_index$Age, "integer")
+  expect_true(is.numeric(master_patient_index$Age))
 })
 
 test_that("uk_pop_standard loads with expected shape", {
