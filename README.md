@@ -66,7 +66,9 @@ library(SangerTools)
 
 - Full reference and articles: <https://ald0405.github.io/SangerTools/>
 - Original RPubs walk-through: <https://rpubs.com/thesiff/sangertools2>
-- New demo notebook (data + every function): `vignette("demo-data-and-functions", package = "SangerTools")`
+- Demo notebook (data + every function), rendered for GitHub:
+  [`notebooks/demo-data-and-functions.md`](notebooks/demo-data-and-functions.md)
+- Same notebook as a package vignette: `vignette("demo-data-and-functions", package = "SangerTools")`
 
 ## Contributors and Authors
 [![Asif](https://i.stack.imgur.com/gVE0j.png) Asif](https://www.linkedin.com/in/asiflaldin/) - Analytics Consultant & NHS-R Fellow
