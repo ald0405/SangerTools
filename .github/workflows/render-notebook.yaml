@@ -6,6 +6,11 @@ on:
     branches: [main, master, modernize-v1.0.3]
     paths:
       - 'vignettes/demo-data-and-functions.Rmd'
+      - 'R/theme_sanger.R'
+      - 'R/scale_fill_sanger.R'
+      - 'R/show_brand_palette.R'
+      - 'R/show_extended_palette.R'
+      - 'R/categorical_col_chart.R'
       - '.github/workflows/render-notebook.yaml'
   workflow_dispatch:
 
