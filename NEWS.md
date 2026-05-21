@@ -1,5 +1,15 @@
 # SangerTools 1.0.3
 
+- **Refreshed `theme_sanger()`**: rebuilt on top of `ggplot2::theme_minimal`
+  with NHS Identity colours and a sleek, minimal layout inspired by modern
+  wearables (Whoop, Withings). Drops the dated `theme_fivethirtyeight`
+  base. Gains optional `base_size` and `base_family` arguments;
+  parameterless calls remain backwards compatible.
+- **Refreshed `scale_fill_sanger()`** and the palette helpers
+  (`show_brand_palette()`, `show_extended_palette()`) to use NHS Identity
+  hues with two accent colours (lime, magenta). Same return shape and
+  vector lengths as before, so existing call sites continue to work.
+- Removed `ggthemes` from `Imports` (no longer used).
 - Added a `testthat` (edition 3) test suite covering every exported function
   and bundled dataset. No code changes to exported functions; tests document
   current behaviour and protect against regressions.

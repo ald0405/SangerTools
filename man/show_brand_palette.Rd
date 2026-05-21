@@ -2,18 +2,19 @@
 % Please edit documentation in R/show_brand_palette.R
 \name{show_brand_palette}
 \alias{show_brand_palette}
-\title{Brand Colour Palette}
+\title{Core brand colour palette}
 \usage{
 show_brand_palette()
 }
 \value{
-a Base R plot object
+A character vector of length 5 containing the hex codes for the
+core palette.
 }
 \description{
-Displays a brand colour palette for showing the hex codes associated with brand
+Displays the five core SangerTools brand colours drawn from NHS Identity
+guidelines, alongside their hex codes.
 }
 \examples{
-library(scales)
 library(SangerTools)
 show_brand_palette()
 }

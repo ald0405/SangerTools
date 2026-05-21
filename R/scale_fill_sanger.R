@@ -1,29 +1,41 @@
 #' @title
-#' Branded discrete colour scale
+#' Vibrant branded discrete colour scale
 #' @description
-#' This anonymous function allows you to apply the Sanger Theme colours to your ggplot2 plot
-#' @return A custom colour filled ggplot2 plot
+#' A `ggplot2` discrete fill scale built from the SangerTools brand palette.
+#' Colours are drawn from NHS Identity guidelines with two modern accent
+#' hues (lime and magenta) for energy, matched to [theme_sanger()].
+#' @return A `ggplot2::scale_fill_manual` object.
 #' @importFrom ggplot2 scale_fill_manual
 #' @examples
 #' library(SangerTools)
 #' library(dplyr)
 #' library(ggplot2)
-#' # Group by Age Band
-#' health_data <- SangerTools::PopHealthData
-#' health_data %>%
-#'   dplyr::filter(Smoker == 1) %>%
-#'   SangerTools::categorical_col_chart(AgeBand) +
+#' SangerTools::PopHealthData %>%
+#'   filter(Smoker == 1) %>%
+#'   categorical_col_chart(AgeBand) +
 #'   labs(
-#'     title = "Smoking Population by Age Band",
-#'     subtitle = "Majority of Smokers are Working Aged ",
+#'     title = "Smoking population by age band",
+#'     subtitle = "Most smokers are working aged",
 #'     x = NULL,
-#'     y = "Patient Number"
-#'   )+
+#'     y = "Patients"
+#'   ) +
+#'   theme_sanger() +
 #'   scale_fill_sanger()
 #' @export
-
-scale_fill_sanger <- function(){
-  brand_colours <- c("#9880BB","#0061BA","#3BBCD9","#223873","#71B72B","#D585BA",
-                    "#007761","#4D8076", "#00C9A7", "#4A4453","#C27767","#D5CABD")
+scale_fill_sanger <- function() {
+  brand_colours <- c(
+    "#003087", # NHS Dark Blue
+    "#0072CE", # NHS Bright Blue
+    "#41B6E6", # NHS Light Blue
+    "#00A499", # NHS Aqua Green
+    "#78BE20", # NHS Light Green
+    "#FFB81C", # NHS Warm Yellow
+    "#DA291C", # NHS Warm Red
+    "#B4E55A", # Whoop-inspired lime accent
+    "#D85DB1", # Vibrant magenta accent
+    "#00A9CE", # NHS Aqua Blue
+    "#425563", # NHS Dark Grey
+    "#768692"  # NHS Mid Grey
+  )
   scale_fill_manual(values = brand_colours)
 }

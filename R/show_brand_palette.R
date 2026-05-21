@@ -1,26 +1,22 @@
-#' @title Brand Colour Palette
+#' @title Core brand colour palette
 #' @description
-#' Displays a brand colour palette for showing the hex codes associated with brand
-#' @return a Base R plot object
+#' Displays the five core SangerTools brand colours drawn from NHS Identity
+#' guidelines, alongside their hex codes.
+#' @return A character vector of length 5 containing the hex codes for the
+#'   core palette.
 #' @importFrom scales show_col
 #' @examples
-#' library(scales)
 #' library(SangerTools)
 #' show_brand_palette()
 #' @export
 show_brand_palette <- function() {
-  show_col(c(
-    "#9880BB",
-    "#0061BA",
-    "#3BBCD9",
-    "#223873",
-    "#71B72B"
-  ))
-  print(c(
-    "#9880BB",
-    "#0061BA",
-    "#3BBCD9",
-    "#223873",
-    "#71B72B"
-  ))
+  cols <- c(
+    "#003087", # NHS Dark Blue
+    "#0072CE", # NHS Bright Blue
+    "#00A499", # NHS Aqua Green
+    "#FFB81C", # NHS Warm Yellow
+    "#DA291C"  # NHS Warm Red
+  )
+  show_col(cols, ncol = 5, borders = NA)
+  invisible(cols)
 }

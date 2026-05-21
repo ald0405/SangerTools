@@ -2,25 +2,34 @@
 % Please edit documentation in R/theme_sanger.R
 \name{theme_sanger}
 \alias{theme_sanger}
-\title{Customised ggplot2 Theme}
+\title{Sleek, minimal ggplot2 theme for SangerTools}
 \usage{
-theme_sanger()
+theme_sanger(base_size = 12, base_family = "")
+}
+\arguments{
+\item{base_size}{Base font size in points. Defaults to 12.}
+
+\item{base_family}{Base font family. Defaults to "" (system default).}
 }
 \value{
-A customised ggplot2 plot
+A ggplot2 theme object that can be added to any ggplot2 plot.
 }
 \description{
-A customised ggplot2 theme for the SangerTools package
+A clean light theme inspired by NHS Identity guidelines and the visual
+language of modern wearables (Whoop, Withings): generous whitespace,
+subtle horizontal gridlines only, no axis ticks or chartjunk, and a
+strong navy heading colour drawn from the NHS palette.
 }
 \examples{
 library(SangerTools)
-library(ggthemes)
 library(ggplot2)
-library(ggtext)
 categorical_col_chart(SangerTools::PopHealthData, Locality) +
-  theme_sanger()+
-  labs(title = "Categorical Column Chart",
-  x = "Locality",
-  y = "Number of Patients")+
+  labs(
+    title = "Patients by locality",
+    subtitle = "Fabricated Gloucestershire CCG data",
+    x = NULL,
+    y = "Patients"
+  ) +
+  theme_sanger() +
   scale_fill_sanger()
 }

@@ -1,44 +1,21 @@
-#' @title
-#' Extended Brand Colour Palette
+#' @title Extended brand colour palette
 #' @description
-#' Displays extended brand colour palette for charting
-#' @return a Base R plot object
+#' Displays the full 12-colour SangerTools brand palette used by
+#' [scale_fill_sanger()]. Mixes NHS Identity colours with two modern accent
+#' hues (lime, magenta) for charts that need more separation.
+#' @return A character vector of length 12 containing the hex codes for the
+#'   extended palette.
 #' @importFrom scales show_col
 #' @examples
-#' library(scales)
 #' library(SangerTools)
 #' show_extended_palette()
 #' @export
 show_extended_palette <- function() {
-  show_col(
-    c(
-      "#9880BB",
-      "#0061BA",
-      "#3BBCD9",
-      "#223873",
-      "#71B72B",
-      "#D585BA",
-      "#007761",
-      "#4D8076",
-      "#00C9A7",
-      "#4A4453",
-      "#C27767",
-      "#D5CABD"
-    )
+  cols <- c(
+    "#003087", "#0072CE", "#41B6E6", "#00A499",
+    "#78BE20", "#FFB81C", "#DA291C", "#B4E55A",
+    "#D85DB1", "#00A9CE", "#425563", "#768692"
   )
-
-  print(c(
-    "#9880BB",
-    "#0061BA",
-    "#3BBCD9",
-    "#223873",
-    "#71B72B",
-    "#D585BA",
-    "#007761",
-    "#4D8076",
-    "#00C9A7",
-    "#4A4453",
-    "#C27767",
-    "#D5CABD"
-  ))
+  show_col(cols, ncol = 6, borders = NA)
+  invisible(cols)
 }

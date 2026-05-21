@@ -2,18 +2,20 @@
 % Please edit documentation in R/show_extended_palette.R
 \name{show_extended_palette}
 \alias{show_extended_palette}
-\title{Extended Brand Colour Palette}
+\title{Extended brand colour palette}
 \usage{
 show_extended_palette()
 }
 \value{
-a Base R plot object
+A character vector of length 12 containing the hex codes for the
+extended palette.
 }
 \description{
-Displays extended brand colour palette for charting
+Displays the full 12-colour SangerTools brand palette used by
+\code{\link[=scale_fill_sanger]{scale_fill_sanger()}}. Mixes NHS Identity colours with two modern accent
+hues (lime, magenta) for charts that need more separation.
 }
 \examples{
-library(scales)
 library(SangerTools)
 show_extended_palette()
 }

@@ -2,30 +2,31 @@
 % Please edit documentation in R/scale_fill_sanger.R
 \name{scale_fill_sanger}
 \alias{scale_fill_sanger}
-\title{Branded discrete colour scale}
+\title{Vibrant branded discrete colour scale}
 \usage{
 scale_fill_sanger()
 }
 \value{
-A custom colour filled ggplot2 plot
+A \code{ggplot2::scale_fill_manual} object.
 }
 \description{
-This anonymous function allows you to apply the Sanger Theme colours to your ggplot2 plot
+A \code{ggplot2} discrete fill scale built from the SangerTools brand palette.
+Colours are drawn from NHS Identity guidelines with two modern accent
+hues (lime and magenta) for energy, matched to \code{\link[=theme_sanger]{theme_sanger()}}.
 }
 \examples{
 library(SangerTools)
 library(dplyr)
 library(ggplot2)
-# Group by Age Band
-health_data <- SangerTools::PopHealthData
-health_data \%>\%
-  dplyr::filter(Smoker == 1) \%>\%
-  SangerTools::categorical_col_chart(AgeBand) +
+SangerTools::PopHealthData \%>\%
+  filter(Smoker == 1) \%>\%
+  categorical_col_chart(AgeBand) +
   labs(
-    title = "Smoking Population by Age Band",
-    subtitle = "Majority of Smokers are Working Aged ",
+    title = "Smoking population by age band",
+    subtitle = "Most smokers are working aged",
     x = NULL,
-    y = "Patient Number"
-  )+
+    y = "Patients"
+  ) +
+  theme_sanger() +
   scale_fill_sanger()
 }

@@ -23,7 +23,6 @@ Imports:
     janitor,
     readr,
     utils,
-    ggthemes,
     magrittr,
     readxl,
     ggtext,
