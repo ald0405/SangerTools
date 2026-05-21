@@ -5,7 +5,16 @@
 ^CRAN-RELEASE$
 ^README.*\.md$
 ^\.travis\.yml$
-cran-comments.md
+^cran-comments\.md$
 ^doc$
 ^Meta$
 ^CRAN-SUBMISSION$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^codecov\.yml$
+^notebooks$
+^\.lintr$
+^\.Rhistory$
+^\.RData$
+^\.Ruserdata$

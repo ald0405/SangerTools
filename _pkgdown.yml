@@ -1,0 +1,58 @@
+url: https://ald0405.github.io/SangerTools/
+
+template:
+  bootstrap: 5
+
+home:
+  title: SangerTools — Population Health Analytics for R
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [search, github]
+
+reference:
+  - title: "Analytics"
+    desc: "Prevalence and standardised rate calculations."
+    contents:
+      - crude_rates
+      - standardised_rates_df
+
+  - title: "Wrangling"
+    desc: "Patient cohort wrangling helpers."
+    contents:
+      - age_bandizer
+      - age_bandizer_2
+      - cohort_processing
+      - split_and_save
+
+  - title: "Charts and theming"
+    desc: "Branded ggplot2 chart helpers."
+    contents:
+      - categorical_col_chart
+      - theme_sanger
+      - scale_fill_sanger
+      - show_brand_palette
+      - show_extended_palette
+
+  - title: "I/O"
+    desc: "Reading and writing data between R, Excel, CSV and SQL."
+    contents:
+      - df_to_sql
+      - excel_clip
+      - multiple_csv_reader
+      - multiple_excel_reader
+
+  - title: "Bundled datasets"
+    desc: "Example population health datasets shipped with the package."
+    contents:
+      - PopHealthData
+      - master_patient_index
+      - uk_pop_standard
+
+articles:
+  - title: "Get started"
+    navbar: ~
+    contents:
+      - SangerTools_Vignette
+      - demo-data-and-functions

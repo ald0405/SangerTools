@@ -6,6 +6,14 @@
 #' You will need to select a Database that your user has write-access to. The user
 #' credentials are the same as your OS login details; as such this function will
 #' most likely only work from you work computer.
+#' @details
+#' This function targets Microsoft SQL Server via an ODBC driver (for example
+#' "ODBC Driver 17 for SQL Server"). It assumes Windows integrated security
+#' (`Trusted_Connection = "True"`), so it will typically only succeed on a
+#' Windows machine that is signed in with a user account that has write
+#' permissions on the target database. The example below is wrapped in
+#' `\\dontrun{}` because it requires a configured DSN and live network access
+#' to a SQL Server instance.
 #' @param df A `dataFrame` or `tibble` ie PopHealthData.
 #' @param driver A driver for database ie "SQL Server"; must be passed in quotation.
 #' @param server The unique name of your database server; must be passed in quotation.
