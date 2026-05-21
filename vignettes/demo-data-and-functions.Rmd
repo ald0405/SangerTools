@@ -1,0 +1,250 @@
+---
+title: "Demo: Data and Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo: Data and Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+```{r setup}
+library(SangerTools)
+library(dplyr)
+library(ggplot2)
+```
+
+This vignette is a single-page tour of **SangerTools**: every bundled
+dataset, every exported function, and a short end-to-end mini-case that
+chains them together. If you have just installed the package and want to
+confirm everything works, run this notebook top to bottom.
+
+# Bundled datasets
+
+SangerTools ships three fabricated population health datasets so every
+example in the package is reproducible without external files.
+
+## `PopHealthData`
+
+A small (1,000 rows) NHS-style population dataset with one row per
+patient.
+
+```{r pop-health}
+data("PopHealthData", package = "SangerTools")
+glimpse(PopHealthData)
+head(PopHealthData)
+```
+
+## `master_patient_index`
+
+A larger (10,000 rows) fabricated Master Patient Index inspired by
+Gloucestershire's population. Includes a numeric `Age` column suitable for
+banding.
+
+```{r mpi}
+data("master_patient_index", package = "SangerTools")
+glimpse(master_patient_index)
+```
+
+## `uk_pop_standard`
+
+A 5-year age band weighting taken from ONS 2018 mid-year population
+estimates, ready to use as a standard population for direct
+standardisation.
+
+```{r uk-pop}
+data("uk_pop_standard", package = "SangerTools")
+uk_pop_standard
+```
+
+# Function gallery
+
+## Wrangling
+
+### `age_bandizer()` — fixed 5-year bands
+
+```{r age-bandizer}
+mpi_banded <- age_bandizer(master_patient_index, Age)
+mpi_banded %>%
+  count(Ageband) %>%
+  head()
+```
+
+### `age_bandizer_2()` — configurable band width
+
+```{r age-bandizer-2}
+ages <- data.frame(Age = sample(0:100, 30, replace = TRUE))
+age_bandizer_2(ages, Age_col = "Age", Age_band_size = 10) %>% head()
+```
+
+### `cohort_processing()` and `split_and_save()`
+
+Both split a data frame by an organisational identifier and write one
+CSV per group. They are file-system side-effects, so we show the
+signatures here and run them in a temp directory below.
+
+```{r split-helpers, eval = FALSE}
+cohort_processing(
+  df = PopHealthData,
+  Split_by = "Locality",
+  path = "outputs/"
+)
+
+split_and_save(
+  df = PopHealthData,
+  Split_by = "Locality",
+  path = "outputs/",
+  prefix = "Locality_"
+)
+```
+
+A quick live demo that cleans up after itself:
+
+```{r split-live}
+tmp <- file.path(tempdir(), "sanger-demo")
+dir.create(tmp, showWarnings = FALSE, recursive = TRUE)
+split_and_save(
+  df = PopHealthData,
+  Split_by = "Locality",
+  path = paste0(tmp, "/"),
+  prefix = "Locality_"
+)
+list.files(tmp, pattern = "\\.csv$")
+unlink(tmp, recursive = TRUE)
+```
+
+## Analytics
+
+### `crude_rates()`
+
+Crude prevalence per 1,000 patients, grouped by one or more variables.
+
+```{r crude}
+crude_rates(PopHealthData, Diabetes, Locality)
+```
+
+### `standardised_rates_df()`
+
+Direct age-standardised prevalence using either the dataset's own age
+structure or a supplied population standard.
+
+```{r standardised}
+standardised_rates_df(
+  df = mpi_banded,
+  Split_by = Locality,
+  Condition = Diabetes,
+  Population_Standard = NULL,
+  Granular = FALSE,
+  Ageband
+)
+```
+
+## Charts and theming
+
+### `categorical_col_chart()` + `theme_sanger()` + `scale_fill_sanger()`
+
+```{r chart-themed}
+PopHealthData %>%
+  filter(Smoker == 1) %>%
+  categorical_col_chart(AgeBand) +
+  labs(
+    title    = "Smoking population by age band",
+    subtitle = "Most smokers are working-aged",
+    x = NULL,
+    y = "Patients"
+  ) +
+  scale_fill_sanger()
+```
+
+### Palette previews
+
+```{r palettes, fig.height = 3}
+show_brand_palette()
+show_extended_palette()
+```
+
+## I/O
+
+### `excel_clip()`
+
+Copies a data frame to the system clipboard in a tab-separated layout
+that pastes cleanly into Excel. Windows only (it uses the `"clipboard"`
+device); skipped in this vignette.
+
+```{r excel-clip, eval = FALSE}
+excel_clip(PopHealthData)
+```
+
+### `df_to_sql()`
+
+Writes a data frame to a Microsoft SQL Server table via ODBC. Requires a
+configured DSN and a Windows machine with integrated authentication; not
+runnable in a vignette build.
+
+```{r df-to-sql, eval = FALSE}
+df_to_sql(
+  df             = PopHealthData,
+  driver         = "ODBC Driver 17 for SQL Server",
+  server         = "your-server",
+  database       = "your-database",
+  sql_table_name = "PopHealthData",
+  overwrite      = FALSE
+)
+```
+
+### `multiple_csv_reader()` / `multiple_excel_reader()`
+
+Aggregate a directory of CSVs or Excel files into one tidy frame.
+Pointed at an empty directory below to keep the vignette hermetic.
+
+```{r readers}
+empty <- file.path(tempdir(), "no-files")
+dir.create(empty, showWarnings = FALSE)
+multiple_csv_reader(paste0(empty, "/"))
+unlink(empty, recursive = TRUE)
+```
+
+# Putting it together
+
+A short end-to-end mini case: take the Master Patient Index, band ages,
+compute age-standardised diabetes prevalence by locality using the ONS
+UK standard population, and plot the result with the Sanger theme.
+
+```{r e2e}
+banded <- age_bandizer(master_patient_index, Age)
+
+rates <- standardised_rates_df(
+  df = banded,
+  Split_by = Locality,
+  Condition = Diabetes,
+  Population_Standard = NULL,
+  Granular = FALSE,
+  Ageband
+)
+
+rates
+
+ggplot(rates, aes(x = reorder(Locality, Standardised_Rate_1k),
+                  y = Standardised_Rate_1k,
+                  fill = Locality)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  labs(
+    title    = "Age-standardised diabetes prevalence",
+    subtitle = "Per 1,000 patients, fabricated Gloucestershire MPI",
+    x = NULL,
+    y = "Standardised rate per 1,000"
+  ) +
+  theme_sanger() +
+  scale_fill_sanger()
+```

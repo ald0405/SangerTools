@@ -1,26 +1,40 @@
+## Submission notes
+
+This is a maintenance release for SangerTools (1.0.3) after a period of
+inactivity. There are no breaking changes; the package's exported API,
+NAMESPACE, and bundled datasets are unchanged versus 1.0.2.
+
+The release focuses on:
+
+* Adding a `testthat` (edition 3) suite covering every exported function and
+  every bundled dataset.
+* Refreshing the CI matrix to `{macOS, Windows, Ubuntu} x
+  {R-release, R-devel, R-oldrel-1}` (see `.github/workflows/R-CMD-check.yaml`).
+* Adding a pkgdown site and a coverage workflow.
+* Adding a new `demo-data-and-functions` vignette.
+* Documenting that `df_to_sql()` targets Microsoft SQL Server via ODBC.
+* Bumping the declared minimum R version from `2.10` to `3.5.0`.
+
 ## Test environments
-* local windows 10, R 4.0.3
-* Windows, R devel 2020-09-09 r79174, on Win-builder
-* Ubuntu 16.04.6 LTS (on travis-ci), R 4.0.2
 
-* GitHub actions:
-  * Mac OS x 10.15.7, R 4.0.3
-  * Windows Server x64 2019, R 4.0.3
-  * Windows Server x64 latest, R 3.6.3
-  * Ubuntu 16.04.07, R-devel 2020-11-27 r79522
-  * Ubuntu 16.04.07, R 4.0.3
-  * Ubuntu 16.04.07, R 3.6.3
-  * Ubuntu 16.04.07, R 3.5.3
-  * Ubuntu 16.04.07, R 3.4.4
-  * Ubuntu 16.04.07, R 3.3.3
+GitHub Actions (see badges on the project README and the matrix at
+`.github/workflows/R-CMD-check.yaml`):
 
-* r-hub:
-  * Ubuntu Linux 16.04 LTS, R-release, GCC
-  * Fedora Linux, R-devel, clang, gfortran
-  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+* macOS-latest, R-release
+* Windows-latest, R-release
+* Ubuntu-latest, R-devel
+* Ubuntu-latest, R-release
+* Ubuntu-latest, R-oldrel-1
+
+To be filled in once the CI matrix has completed on the release branch:
+
+* All checks: 0 errors, 0 warnings, 0 notes.
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
+
+To be confirmed against the CI matrix on the release branch.
 
 ## Downstream dependencies
-There are currently no downstream dependencies for this package to my knowledge.
+
+There are currently no downstream dependencies for this package to my
+knowledge.

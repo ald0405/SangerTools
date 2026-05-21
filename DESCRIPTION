@@ -1,7 +1,7 @@
 Package: SangerTools
 Type: Package
 Title: Tools for Population Health Management Analytics
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
           person("Asif", "Laldin", , "laldin.asif@gmail.com", c("aut", "cre")),
           person("Gary", "Hutson", ,"hutsons-hacks@outlook.com", "aut", comment = c(ORCID="0000-0003-3534-6143"))
@@ -11,17 +11,19 @@ Description: Created for population health analytics and monitoring.
     The functions in this package work best when working with patient level Master Patient Index-like datasets .
     Built to be used by  NHS bodies and other health service providers.
 License: AGPL (>= 3)
+URL: https://github.com/ald0405/SangerTools, https://ald0405.github.io/SangerTools/
+BugReports: https://github.com/ald0405/SangerTools/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
-Imports: 
-    ggplot2, 
-    dplyr, 
+RoxygenNote: 7.3.2
+Imports:
+    ggplot2,
+    dplyr,
     scales,
     janitor,
     readr,
-    utils, 
-    ggthemes, 
+    utils,
+    ggthemes,
     magrittr,
     readxl,
     ggtext,
@@ -29,13 +31,15 @@ Imports:
     odbc,
     rlang,
     tibble
-Suggests: 
+Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0),
-    kableExtra
+    kableExtra,
+    pkgdown,
+    covr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-Depends: 
-    R (>= 2.10)
+Depends:
+    R (>= 3.5.0)
 Language: en-gb
