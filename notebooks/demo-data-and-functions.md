@@ -123,12 +123,12 @@ mpi_banded %>%
 ages <- data.frame(Age = sample(0:100, 30, replace = TRUE))
 age_bandizer_2(ages, Age_col = "Age", Age_band_size = 10) %>% head()
 #>   Age Ageband
-#> 1  99   90-99
-#> 2   5     0-9
-#> 3  84   80-89
-#> 4  62   60-69
-#> 5  26   20-29
-#> 6  15   10-19
+#> 1  84   80-89
+#> 2  88   80-89
+#> 3   6     0-9
+#> 4  21   20-29
+#> 5  82   80-89
+#> 6   2     0-9
 ```
 
 ### `cohort_processing()` and `split_and_save()`
