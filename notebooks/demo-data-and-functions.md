@@ -123,12 +123,12 @@ mpi_banded %>%
 ages <- data.frame(Age = sample(0:100, 30, replace = TRUE))
 age_bandizer_2(ages, Age_col = "Age", Age_band_size = 10) %>% head()
 #>   Age Ageband
-#> 1  99   90-99
-#> 2   5     0-9
-#> 3  84   80-89
-#> 4  62   60-69
-#> 5  26   20-29
-#> 6  15   10-19
+#> 1   4     0-9
+#> 2  32   30-39
+#> 3  20   20-29
+#> 4  24   20-29
+#> 5   6     0-9
+#> 6  66   60-69
 ```
 
 ### `cohort_processing()` and `split_and_save()`
@@ -365,13 +365,11 @@ show_brand_palette()
 
 ![](/home/runner/work/SangerTools/SangerTools/notebooks/demo-data-and-functions_files/figure-gfm/palettes-1.png)<!-- -->
 
-    #> [1] "#9880BB" "#0061BA" "#3BBCD9" "#223873" "#71B72B"
-    show_extended_palette()
+``` r
+show_extended_palette()
+```
 
 ![](/home/runner/work/SangerTools/SangerTools/notebooks/demo-data-and-functions_files/figure-gfm/palettes-2.png)<!-- -->
-
-    #>  [1] "#9880BB" "#0061BA" "#3BBCD9" "#223873" "#71B72B" "#D585BA" "#007761"
-    #>  [8] "#4D8076" "#00C9A7" "#4A4453" "#C27767" "#D5CABD"
 
 ## I/O
 
